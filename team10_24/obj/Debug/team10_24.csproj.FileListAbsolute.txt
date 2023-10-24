@@ -8,3 +8,4 @@ C:\웹프\team10_24\team10_24\obj\Debug\team10_24.csproj.GenerateResource.cache
 C:\웹프\team10_24\team10_24\obj\Debug\team10_24.csproj.CoreCompileInputs.cache
 C:\웹프\team10_24\team10_24\obj\Debug\team10_24.exe
 C:\웹프\team10_24\team10_24\obj\Debug\team10_24.pdb
+C:\웹프\team10_24\team10_24\obj\Debug\team10_24.Form2.resources
