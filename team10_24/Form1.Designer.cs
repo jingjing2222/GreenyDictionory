@@ -44,7 +44,6 @@ namespace team10_24
             this.Id.Name = "Id";
             this.Id.Size = new System.Drawing.Size(88, 21);
             this.Id.TabIndex = 0;
-            this.Id.WordWrap = false;
             // 
             // PW
             // 
