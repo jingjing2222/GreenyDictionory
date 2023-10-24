@@ -16,8 +16,8 @@ namespace team10_24
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
-            Application.Run(new Form2());
+            Application.Run(new Form1()); // Form1을 실행합니다.
+            Application.Run(new Form2()); // Form2를 실행합니다.
         }
     }
 }

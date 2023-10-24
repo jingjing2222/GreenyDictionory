@@ -1,0 +1,56 @@
+[33mcommit 3082a0a7ad88b951ebd0da751f7865d923a41ff6[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m, [m[1;31morigin/main[m[33m)[m
+Merge: f52556a c6e31fa
+Author: jingjing2222 <131797378+jingjing2222@users.noreply.github.com>
+Date:   Tue Oct 24 18:14:31 2023 +0900
+
+    Merge pull request #3 from jingjing2222/KHJ
+    
+    Test2
+
+[33mcommit c6e31fa1e2de5b2fbf85f37bc2730e25d4034b16[m[33m ([m[1;31morigin/KHJ[m[33m, [m[1;32mKHJ[m[33m)[m
+Author: jingjing2222 <gudwjd1208@koreatech.ac.kr>
+Date:   Tue Oct 24 18:13:53 2023 +0900
+
+    Test2
+
+[33mcommit f52556aa242351b225fdb8e74139984b5781c42a[m
+Merge: 705e1cd 1d0ebe4
+Author: jingjing2222 <131797378+jingjing2222@users.noreply.github.com>
+Date:   Tue Oct 24 18:06:22 2023 +0900
+
+    Merge pull request #2 from jingjing2222/KHJ
+    
+    Test
+
+[33mcommit 1d0ebe4efaaeca36d931a5d1323f46280351fae8[m
+Author: jingjing2222 <gudwjd1208@koreatech.ac.kr>
+Date:   Tue Oct 24 18:04:59 2023 +0900
+
+    Test
+
+[33mcommit 705e1cdd7b47e4053d88120279b71a875fc25f0c[m[33m ([m[1;31morigin/OJH[m[33m, [m[1;31morigin/KHW19[m[33m, [m[1;31morigin/KHW18[m[33m, [m[1;32mKHW18[m[33m)[m
+Merge: 4c090a0 93cff58
+Author: jingjing2222 <131797378+jingjing2222@users.noreply.github.com>
+Date:   Tue Oct 24 17:56:04 2023 +0900
+
+    Merge pull request #1 from jingjing2222/KHJ
+    
+    Khj
+
+[33mcommit 93cff589129995e98d7d1fe7428b74d62ac4b43e[m
+Author: jingjing2222 <gudwjd1208@koreatech.ac.kr>
+Date:   Tue Oct 24 17:54:55 2023 +0900
+
+    데이터 수정 삭제 등 추가된거
+
+[33mcommit 18404b9535d124c8ba2d35277871495d0857c448[m
+Author: jingjing2222 <gudwjd1208@koreatech.ac.kr>
+Date:   Tue Oct 24 17:49:31 2023 +0900
+
+    First
+
+[33mcommit 4c090a06bf9f9553443bf3e25cfbaa9f47730790[m[33m ([m[1;32mmain[m[33m)[m
+Author: jingjing2222 <gudwjd1208@koreatech.ac.kr>
+Date:   Tue Oct 24 10:27:45 2023 +0900
+
+    first commit
