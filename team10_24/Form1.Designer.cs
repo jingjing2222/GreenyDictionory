@@ -39,23 +39,27 @@ namespace team10_24
             // 
             // Id
             // 
-            this.Id.Location = new System.Drawing.Point(341, 88);
+            this.Id.Location = new System.Drawing.Point(298, 70);
+            this.Id.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Id.Name = "Id";
-            this.Id.Size = new System.Drawing.Size(100, 25);
+            this.Id.Size = new System.Drawing.Size(88, 21);
             this.Id.TabIndex = 0;
+            this.Id.WordWrap = false;
             // 
             // PW
             // 
-            this.PW.Location = new System.Drawing.Point(341, 139);
+            this.PW.Location = new System.Drawing.Point(298, 111);
+            this.PW.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PW.Name = "PW";
-            this.PW.Size = new System.Drawing.Size(100, 25);
+            this.PW.Size = new System.Drawing.Size(88, 21);
             this.PW.TabIndex = 1;
             // 
             // Login
             // 
-            this.Login.Location = new System.Drawing.Point(353, 193);
+            this.Login.Location = new System.Drawing.Point(309, 154);
+            this.Login.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Login.Name = "Login";
-            this.Login.Size = new System.Drawing.Size(75, 23);
+            this.Login.Size = new System.Drawing.Size(66, 18);
             this.Login.TabIndex = 2;
             this.Login.Text = "Login";
             this.Login.UseVisualStyleBackColor = true;
@@ -63,9 +67,10 @@ namespace team10_24
             // 
             // Signup
             // 
-            this.Signup.Location = new System.Drawing.Point(353, 222);
+            this.Signup.Location = new System.Drawing.Point(309, 178);
+            this.Signup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Signup.Name = "Signup";
-            this.Signup.Size = new System.Drawing.Size(75, 23);
+            this.Signup.Size = new System.Drawing.Size(66, 18);
             this.Signup.TabIndex = 3;
             this.Signup.Text = "Sign up";
             this.Signup.UseVisualStyleBackColor = true;
@@ -74,32 +79,33 @@ namespace team10_24
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(279, 91);
+            this.label1.Location = new System.Drawing.Point(244, 73);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(18, 15);
+            this.label1.Size = new System.Drawing.Size(15, 12);
             this.label1.TabIndex = 4;
             this.label1.Text = "Id";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(250, 142);
+            this.label2.Location = new System.Drawing.Point(219, 114);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(72, 15);
+            this.label2.Size = new System.Drawing.Size(62, 12);
             this.label2.TabIndex = 5;
             this.label2.Text = "Password";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(700, 360);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Signup);
             this.Controls.Add(this.Login);
             this.Controls.Add(this.PW);
             this.Controls.Add(this.Id);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
