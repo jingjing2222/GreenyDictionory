@@ -16,11 +16,6 @@ namespace team10_24
         {
             InitializeComponent();
         }
-        //새로 클릭
-        private void New_Click(object sender, EventArgs e)
-        {
-
-        }
         //추가 클릭
         private void Add_Click(object sender, EventArgs e)
         {

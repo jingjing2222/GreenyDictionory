@@ -10,30 +10,26 @@ using System.Windows.Forms;
 
 namespace team10_24
 {
-    public partial class Form1 : Form
+    public partial class Form3 : Form
     {
-        public Form1()
+        public Form3()
         {
             InitializeComponent();
         }
 
-        //로그인 클릭
-        private void Login_Click(object sender, EventArgs e)
+        private void pw_check_bt_Click(object sender, EventArgs e)
         {
 
         }
 
-        //회원가입 클릭
-        private void Signup_Click(object sender, EventArgs e)
+        private void Id_check_bt_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void submit_Click(object sender, EventArgs e)
         {
 
         }
-
-        
     }
 }
