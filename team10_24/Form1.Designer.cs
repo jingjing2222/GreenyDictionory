@@ -35,27 +35,31 @@ namespace team10_24
             this.Signup = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // Id
             // 
-            this.Id.Location = new System.Drawing.Point(341, 88);
+            this.Id.Location = new System.Drawing.Point(298, 70);
+            this.Id.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Id.Name = "Id";
-            this.Id.Size = new System.Drawing.Size(170, 25);
+            this.Id.Size = new System.Drawing.Size(149, 21);
             this.Id.TabIndex = 0;
             // 
             // PW
             // 
-            this.PW.Location = new System.Drawing.Point(341, 139);
+            this.PW.Location = new System.Drawing.Point(298, 111);
+            this.PW.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PW.Name = "PW";
-            this.PW.Size = new System.Drawing.Size(170, 25);
+            this.PW.Size = new System.Drawing.Size(149, 21);
             this.PW.TabIndex = 1;
             // 
             // Login
             // 
-            this.Login.Location = new System.Drawing.Point(382, 193);
+            this.Login.Location = new System.Drawing.Point(334, 154);
+            this.Login.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Login.Name = "Login";
-            this.Login.Size = new System.Drawing.Size(88, 23);
+            this.Login.Size = new System.Drawing.Size(77, 18);
             this.Login.TabIndex = 2;
             this.Login.Text = "로그인";
             this.Login.UseVisualStyleBackColor = true;
@@ -63,9 +67,10 @@ namespace team10_24
             // 
             // Signup
             // 
-            this.Signup.Location = new System.Drawing.Point(382, 222);
+            this.Signup.Location = new System.Drawing.Point(334, 178);
+            this.Signup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Signup.Name = "Signup";
-            this.Signup.Size = new System.Drawing.Size(88, 23);
+            this.Signup.Size = new System.Drawing.Size(77, 18);
             this.Signup.TabIndex = 3;
             this.Signup.Text = "회원가입";
             this.Signup.UseVisualStyleBackColor = true;
@@ -74,32 +79,44 @@ namespace team10_24
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(270, 91);
+            this.label1.Location = new System.Drawing.Point(236, 73);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 15);
+            this.label1.Size = new System.Drawing.Size(41, 12);
             this.label1.TabIndex = 4;
             this.label1.Text = "아이디";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(255, 142);
+            this.label2.Location = new System.Drawing.Point(223, 114);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 15);
+            this.label2.Size = new System.Drawing.Size(53, 12);
             this.label2.TabIndex = 5;
             this.label2.Text = "비밀번호";
             // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(495, 271);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(86, 16);
+            this.checkBox1.TabIndex = 6;
+            this.checkBox1.Text = "checkBox1";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(700, 360);
+            this.Controls.Add(this.checkBox1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Signup);
             this.Controls.Add(this.Login);
             this.Controls.Add(this.PW);
             this.Controls.Add(this.Id);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -115,6 +132,7 @@ namespace team10_24
         private System.Windows.Forms.Button Signup;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 
