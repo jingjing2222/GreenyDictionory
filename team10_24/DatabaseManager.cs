@@ -12,11 +12,19 @@ namespace team10_24
     {
         private MySqlConnection connection;
         private string connectionString = "server=webp.flykorea.kr;user=hpjw;database=hpjwDB;port=13306;password=qwer!@!@1234;";
-    
+        
         public DatabaseManager()
         {
             connection = new MySqlConnection(this.connectionString);
         }
+        public class UserData
+        {
+            public string Id { get; set; }
+            public string Password { get; set; }
+            public string Email { get; set; }
+            public string Username { get; set; }
+        }
+
         public void Connect()
         {
             try
@@ -42,7 +50,7 @@ namespace team10_24
   
             }
         }
-        public bool Id_check(string inputId)
+        public bool Id_check(string inputId) //아이디 중복 확인 버튼에 사용되는 메서드
         {
             try
             {
@@ -74,7 +82,7 @@ namespace team10_24
                 return true;
             }
         }
-        public bool Register(string id, string pw, string email, string username)
+        public bool Register(string id, string pw, string email, string username) //회원가입 버튼 클릭 시 사용되는 메서드
         {
             try
             {
@@ -95,7 +103,7 @@ namespace team10_24
                 return false; // 추가 실패를 나타내는 값
             }
         }
-        public bool IsValidEmail(string email)
+        public bool IsValidEmail(string email) //이메일 형식 확인 메서드
         {
             // 간단한 이메일 형식의 정규 표현식
             string pattern = @"^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$";
@@ -104,6 +112,41 @@ namespace team10_24
         }
 
 
+        public UserData GetUserData(string userId) //로그인 할 때 사용
+        {
+            try
+            {
+                string query = "SELECT id, password, email, username FROM UserTable WHERE id = @userId";
 
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@userId", userId);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // 데이터베이스에서 읽어온 값을 사용자 정보 객체에 매핑
+                            UserData userData = new UserData
+                            {
+                                Id = reader.GetString("id"),
+                                Password = reader.GetString("password"),
+                                Email = reader.GetString("email"),
+                                Username = reader.GetString("username")
+                            };
+
+                            return userData;
+                        }
+                    }
+                }
+                // 사용자 정보가 없을 경우 null 반환
+                return null;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("데이터 조회 중 오류 발생: " + ex.Message);
+                return null;
+            }
+        }
     }
 }
