@@ -24,34 +24,21 @@ namespace team10_24
         //로그인 클릭
         private void Login_Click(object sender, EventArgs e)
         {
-            string id = Id.Text; // Replace with your actual ID TextBox control name
-            string password = PW.Text; // Replace with your actual Password TextBox control name
+            DatabaseManager.UserData userData = dbManager.GetUserData(Id.Text);
 
-            // Check if either the ID or password field is empty
-            if (string.IsNullOrEmpty(id))
+            if (userData != null && userData.Password == PW.Text)
             {
-                MessageBox.Show("Please enter your ID.");
-                return;
+                MessageBox.Show("로그인 성공!");
+                this.Hide();
+                Form16 form16 = new Form16(); 
+                form16.ShowDialog();
+                this.Close();
             }
-            if (string.IsNullOrEmpty(password))
+            else
             {
-                MessageBox.Show("Please enter your password.");
-                return;
+                MessageBox.Show("아이디 또는 비밀번호가 올바르지 않습니다.");
             }
-
-            // Validate the ID and password
-            /*if (!dbManager.ValidateCredentials(id, password))
-            {
-                MessageBox.Show("Invalid ID or password.");
-                return;
-            }*/
-
-            // If both ID and password are correct, transition to Form 16 (Green Book Main Form)
-            Form16 form16 = new Form16(); // Assuming Form16 is the class name for Green Book main form
-            form16.Show();
         }
-
-
 
         //회원가입 클릭
         private void Signup_Click(object sender, EventArgs e)
@@ -62,16 +49,6 @@ namespace team10_24
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Id_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void PW_TextChanged(object sender, EventArgs e)
         {
 
         }

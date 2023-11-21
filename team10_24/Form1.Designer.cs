@@ -46,7 +46,6 @@ namespace team10_24
             this.Id.Name = "Id";
             this.Id.Size = new System.Drawing.Size(149, 21);
             this.Id.TabIndex = 0;
-            this.Id.TextChanged += new System.EventHandler(this.Id_TextChanged);
             // 
             // PW
             // 
@@ -55,7 +54,6 @@ namespace team10_24
             this.PW.Name = "PW";
             this.PW.Size = new System.Drawing.Size(149, 21);
             this.PW.TabIndex = 1;
-            this.PW.TextChanged += new System.EventHandler(this.PW_TextChanged);
             // 
             // Login
             // 

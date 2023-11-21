@@ -65,8 +65,8 @@ Desktop.ini
 $RECYCLE.BIN/
 
 # Compiled files
-/bin/
-/obj/
+/team10_24/bin/
+/team10_24/obj/
 
 # Dump file
 *.stackdump
@@ -76,3 +76,4 @@ $RECYCLE.BIN/
 .md
 
 *.cache
+/team10_24
