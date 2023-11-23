@@ -35,6 +35,7 @@ namespace team10_24
             this.diary = new System.Windows.Forms.TextBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.Add = new System.Windows.Forms.Button();
+            this.back = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -85,17 +86,28 @@ namespace team10_24
             // 
             this.Add.Location = new System.Drawing.Point(190, 396);
             this.Add.Name = "Add";
-            this.Add.Size = new System.Drawing.Size(86, 33);
+            this.Add.Size = new System.Drawing.Size(88, 33);
             this.Add.TabIndex = 5;
             this.Add.Text = "추가";
             this.Add.UseVisualStyleBackColor = true;
             this.Add.Click += new System.EventHandler(this.Add_Click);
+            // 
+            // back
+            // 
+            this.back.Location = new System.Drawing.Point(320, 396);
+            this.back.Name = "back";
+            this.back.Size = new System.Drawing.Size(88, 33);
+            this.back.TabIndex = 43;
+            this.back.Text = "돌아가기";
+            this.back.UseVisualStyleBackColor = true;
+            this.back.Click += new System.EventHandler(this.back_Click);
             // 
             // Form9
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.back);
             this.Controls.Add(this.Add);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.diary);
@@ -117,5 +129,6 @@ namespace team10_24
         private System.Windows.Forms.TextBox diary;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button Add;
+        private System.Windows.Forms.Button back;
     }
 }

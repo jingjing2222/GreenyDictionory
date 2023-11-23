@@ -29,26 +29,18 @@ namespace team10_24
         /// </summary>
         private void InitializeComponent()
         {
-            this.Okay = new System.Windows.Forms.Button();
             this.Delete = new System.Windows.Forms.Button();
             this.Modify = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.back = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
-            // 
-            // Okay
-            // 
-            this.Okay.Location = new System.Drawing.Point(509, 352);
-            this.Okay.Name = "Okay";
-            this.Okay.Size = new System.Drawing.Size(91, 35);
-            this.Okay.TabIndex = 7;
-            this.Okay.Text = "확인";
-            this.Okay.UseVisualStyleBackColor = true;
             // 
             // Delete
             // 
-            this.Delete.Location = new System.Drawing.Point(201, 350);
+            this.Delete.Location = new System.Drawing.Point(168, 383);
             this.Delete.Name = "Delete";
-            this.Delete.Size = new System.Drawing.Size(91, 39);
+            this.Delete.Size = new System.Drawing.Size(91, 32);
             this.Delete.TabIndex = 5;
             this.Delete.Text = "삭제";
             this.Delete.UseVisualStyleBackColor = true;
@@ -56,9 +48,9 @@ namespace team10_24
             // 
             // Modify
             // 
-            this.Modify.Location = new System.Drawing.Point(358, 350);
+            this.Modify.Location = new System.Drawing.Point(349, 383);
             this.Modify.Name = "Modify";
-            this.Modify.Size = new System.Drawing.Size(91, 39);
+            this.Modify.Size = new System.Drawing.Size(91, 32);
             this.Modify.TabIndex = 4;
             this.Modify.Text = "수정";
             this.Modify.UseVisualStyleBackColor = true;
@@ -66,19 +58,40 @@ namespace team10_24
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(247, 53);
+            this.textBox1.Location = new System.Drawing.Point(168, 93);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(313, 257);
+            this.textBox1.Size = new System.Drawing.Size(455, 254);
             this.textBox1.TabIndex = 8;
+            // 
+            // back
+            // 
+            this.back.Location = new System.Drawing.Point(532, 383);
+            this.back.Name = "back";
+            this.back.Size = new System.Drawing.Size(91, 32);
+            this.back.TabIndex = 43;
+            this.back.Text = "돌아가기";
+            this.back.UseVisualStyleBackColor = true;
+            this.back.Click += new System.EventHandler(this.back_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("굴림", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(303, 32);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(196, 28);
+            this.label1.TabIndex = 44;
+            this.label1.Text = "커뮤니티 내용";
             // 
             // Form13
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.back);
             this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.Okay);
             this.Controls.Add(this.Delete);
             this.Controls.Add(this.Modify);
             this.Name = "Form13";
@@ -89,10 +102,10 @@ namespace team10_24
         }
 
         #endregion
-
-        private System.Windows.Forms.Button Okay;
         private System.Windows.Forms.Button Delete;
         private System.Windows.Forms.Button Modify;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button back;
+        private System.Windows.Forms.Label label1;
     }
 }

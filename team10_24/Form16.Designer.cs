@@ -38,6 +38,7 @@ namespace team10_24
             this.bookmark = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.logout = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
@@ -46,18 +47,18 @@ namespace team10_24
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("휴먼둥근헤드라인", 25.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(317, 37);
+            this.label1.Location = new System.Drawing.Point(378, 44);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(155, 36);
+            this.label1.Size = new System.Drawing.Size(192, 45);
             this.label1.TabIndex = 0;
             this.label1.Text = "초록도감";
             // 
             // Search
             // 
-            this.Search.Location = new System.Drawing.Point(338, 121);
+            this.Search.Location = new System.Drawing.Point(386, 151);
             this.Search.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Search.Name = "Search";
-            this.Search.Size = new System.Drawing.Size(139, 45);
+            this.Search.Size = new System.Drawing.Size(159, 56);
             this.Search.TabIndex = 1;
             this.Search.Text = "식물 검색";
             this.Search.UseVisualStyleBackColor = true;
@@ -65,10 +66,10 @@ namespace team10_24
             // 
             // history
             // 
-            this.history.Location = new System.Drawing.Point(338, 178);
+            this.history.Location = new System.Drawing.Point(386, 222);
             this.history.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.history.Name = "history";
-            this.history.Size = new System.Drawing.Size(139, 43);
+            this.history.Size = new System.Drawing.Size(159, 54);
             this.history.TabIndex = 2;
             this.history.Text = "식물 히스토리";
             this.history.UseVisualStyleBackColor = true;
@@ -76,10 +77,10 @@ namespace team10_24
             // 
             // diary
             // 
-            this.diary.Location = new System.Drawing.Point(338, 240);
+            this.diary.Location = new System.Drawing.Point(386, 300);
             this.diary.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.diary.Name = "diary";
-            this.diary.Size = new System.Drawing.Size(139, 43);
+            this.diary.Size = new System.Drawing.Size(159, 54);
             this.diary.TabIndex = 3;
             this.diary.Text = "식물 일기장";
             this.diary.UseVisualStyleBackColor = true;
@@ -87,10 +88,10 @@ namespace team10_24
             // 
             // community
             // 
-            this.community.Location = new System.Drawing.Point(338, 304);
+            this.community.Location = new System.Drawing.Point(386, 380);
             this.community.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.community.Name = "community";
-            this.community.Size = new System.Drawing.Size(139, 43);
+            this.community.Size = new System.Drawing.Size(159, 54);
             this.community.TabIndex = 4;
             this.community.Text = "커뮤니티";
             this.community.UseVisualStyleBackColor = true;
@@ -98,40 +99,52 @@ namespace team10_24
             // 
             // bookmark
             // 
-            this.bookmark.Location = new System.Drawing.Point(338, 364);
+            this.bookmark.Location = new System.Drawing.Point(386, 455);
             this.bookmark.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bookmark.Name = "bookmark";
-            this.bookmark.Size = new System.Drawing.Size(139, 43);
+            this.bookmark.Size = new System.Drawing.Size(159, 54);
             this.bookmark.TabIndex = 5;
-            this.bookmark.Text = "내가 북마크 한 식물";
+            this.bookmark.Text = "내가 찜한 식물";
             this.bookmark.UseVisualStyleBackColor = true;
             this.bookmark.Click += new System.EventHandler(this.bookmark_Click);
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(59, 155);
+            this.pictureBox1.Location = new System.Drawing.Point(71, 210);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(177, 170);
+            this.pictureBox1.Size = new System.Drawing.Size(205, 205);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
             // 
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(608, 54);
+            this.pictureBox2.Location = new System.Drawing.Point(703, 108);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(144, 134);
+            this.pictureBox2.Size = new System.Drawing.Size(165, 168);
             this.pictureBox2.TabIndex = 7;
             this.pictureBox2.TabStop = false;
             // 
+            // logout
+            // 
+            this.logout.Location = new System.Drawing.Point(386, 530);
+            this.logout.Name = "logout";
+            this.logout.Size = new System.Drawing.Size(159, 54);
+            this.logout.TabIndex = 8;
+            this.logout.Text = "로그아웃";
+            this.logout.UseVisualStyleBackColor = true;
+            this.logout.Click += new System.EventHandler(this.logout_Click);
+            // 
             // Form16
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(824, 452);
+            this.ClientSize = new System.Drawing.Size(942, 609);
+            this.Controls.Add(this.logout);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.bookmark);
@@ -160,5 +173,6 @@ namespace team10_24
         private System.Windows.Forms.Button bookmark;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Button logout;
     }
 }

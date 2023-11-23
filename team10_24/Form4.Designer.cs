@@ -62,15 +62,12 @@ namespace team10_24
             this.summer = new System.Windows.Forms.RadioButton();
             this.fall = new System.Windows.Forms.RadioButton();
             this.winter = new System.Windows.Forms.RadioButton();
-            this.label7 = new System.Windows.Forms.Label();
-            this.color_no = new System.Windows.Forms.RadioButton();
-            this.label8 = new System.Windows.Forms.Label();
-            this.bloom_no = new System.Windows.Forms.RadioButton();
             this.name_search = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.Search = new System.Windows.Forms.Button();
             this.Add = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
+            this.back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -409,46 +406,6 @@ namespace team10_24
             this.winter.UseVisualStyleBackColor = true;
             this.winter.CheckedChanged += new System.EventHandler(this.winter_CheckedChanged);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("굴림", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.Location = new System.Drawing.Point(591, 290);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(47, 19);
-            this.label7.TabIndex = 32;
-            this.label7.Text = "모름";
-            // 
-            // color_no
-            // 
-            this.color_no.AutoSize = true;
-            this.color_no.Location = new System.Drawing.Point(566, 293);
-            this.color_no.Name = "color_no";
-            this.color_no.Size = new System.Drawing.Size(17, 16);
-            this.color_no.TabIndex = 33;
-            this.color_no.TabStop = true;
-            this.color_no.UseVisualStyleBackColor = true;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("굴림", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label8.Location = new System.Drawing.Point(445, 404);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 19);
-            this.label8.TabIndex = 34;
-            this.label8.Text = "모름";
-            // 
-            // bloom_no
-            // 
-            this.bloom_no.AutoSize = true;
-            this.bloom_no.Location = new System.Drawing.Point(422, 407);
-            this.bloom_no.Name = "bloom_no";
-            this.bloom_no.Size = new System.Drawing.Size(17, 16);
-            this.bloom_no.TabIndex = 35;
-            this.bloom_no.TabStop = true;
-            this.bloom_no.UseVisualStyleBackColor = true;
-            // 
             // name_search
             // 
             this.name_search.Location = new System.Drawing.Point(36, 135);
@@ -468,18 +425,18 @@ namespace team10_24
             // 
             // Search
             // 
-            this.Search.Location = new System.Drawing.Point(43, 463);
+            this.Search.Location = new System.Drawing.Point(43, 469);
             this.Search.Name = "Search";
-            this.Search.Size = new System.Drawing.Size(106, 38);
+            this.Search.Size = new System.Drawing.Size(99, 32);
             this.Search.TabIndex = 38;
             this.Search.Text = "검색";
             this.Search.UseVisualStyleBackColor = true;
             // 
             // Add
             // 
-            this.Add.Location = new System.Drawing.Point(178, 463);
+            this.Add.Location = new System.Drawing.Point(178, 469);
             this.Add.Name = "Add";
-            this.Add.Size = new System.Drawing.Size(99, 38);
+            this.Add.Size = new System.Drawing.Size(92, 32);
             this.Add.TabIndex = 39;
             this.Add.Text = "추가";
             this.Add.UseVisualStyleBackColor = true;
@@ -490,24 +447,31 @@ namespace team10_24
             this.label10.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label10.Location = new System.Drawing.Point(32, 34);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(178, 24);
+            this.label10.Size = new System.Drawing.Size(119, 24);
             this.label10.TabIndex = 40;
-            this.label10.Text = "식물 검색,추가";
+            this.label10.Text = "식물 검색";
+            // 
+            // back
+            // 
+            this.back.Location = new System.Drawing.Point(307, 469);
+            this.back.Name = "back";
+            this.back.Size = new System.Drawing.Size(92, 32);
+            this.back.TabIndex = 41;
+            this.back.Text = "돌아가기";
+            this.back.UseVisualStyleBackColor = true;
+            this.back.Click += new System.EventHandler(this.back_Click);
             // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(751, 544);
+            this.Controls.Add(this.back);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.Add);
             this.Controls.Add(this.Search);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.name_search);
-            this.Controls.Add(this.bloom_no);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.color_no);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.winter);
             this.Controls.Add(this.fall);
             this.Controls.Add(this.summer);
@@ -592,14 +556,11 @@ namespace team10_24
         private System.Windows.Forms.RadioButton summer;
         private System.Windows.Forms.RadioButton fall;
         private System.Windows.Forms.RadioButton winter;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.RadioButton color_no;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.RadioButton bloom_no;
         private System.Windows.Forms.TextBox name_search;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button Search;
         private System.Windows.Forms.Button Add;
         private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Button back;
     }
 }

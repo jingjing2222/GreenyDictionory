@@ -40,28 +40,28 @@ namespace team10_24
             // 
             // Id
             // 
-            this.Id.Location = new System.Drawing.Point(282, 111);
+            this.Id.Location = new System.Drawing.Point(322, 139);
             this.Id.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Id.Name = "Id";
-            this.Id.Size = new System.Drawing.Size(149, 21);
+            this.Id.Size = new System.Drawing.Size(170, 25);
             this.Id.TabIndex = 0;
             this.Id.TextChanged += new System.EventHandler(this.Id_TextChanged);
             // 
             // PW
             // 
-            this.PW.Location = new System.Drawing.Point(282, 156);
+            this.PW.Location = new System.Drawing.Point(322, 195);
             this.PW.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.PW.Name = "PW";
-            this.PW.Size = new System.Drawing.Size(149, 21);
+            this.PW.Size = new System.Drawing.Size(170, 25);
             this.PW.TabIndex = 1;
             this.PW.TextChanged += new System.EventHandler(this.PW_TextChanged);
             // 
             // Login
             // 
-            this.Login.Location = new System.Drawing.Point(318, 214);
+            this.Login.Location = new System.Drawing.Point(363, 254);
             this.Login.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Login.Name = "Login";
-            this.Login.Size = new System.Drawing.Size(77, 18);
+            this.Login.Size = new System.Drawing.Size(88, 25);
             this.Login.TabIndex = 2;
             this.Login.Text = "로그인";
             this.Login.UseVisualStyleBackColor = true;
@@ -69,10 +69,10 @@ namespace team10_24
             // 
             // Signup
             // 
-            this.Signup.Location = new System.Drawing.Point(318, 246);
+            this.Signup.Location = new System.Drawing.Point(363, 302);
             this.Signup.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Signup.Name = "Signup";
-            this.Signup.Size = new System.Drawing.Size(77, 18);
+            this.Signup.Size = new System.Drawing.Size(88, 25);
             this.Signup.TabIndex = 3;
             this.Signup.Text = "회원가입";
             this.Signup.UseVisualStyleBackColor = true;
@@ -81,36 +81,36 @@ namespace team10_24
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(221, 114);
+            this.label1.Location = new System.Drawing.Point(253, 142);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(41, 12);
+            this.label1.Size = new System.Drawing.Size(52, 15);
             this.label1.TabIndex = 4;
             this.label1.Text = "아이디";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(208, 158);
+            this.label2.Location = new System.Drawing.Point(238, 198);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 12);
+            this.label2.Size = new System.Drawing.Size(67, 15);
             this.label2.TabIndex = 5;
             this.label2.Text = "비밀번호";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.Location = new System.Drawing.Point(320, 55);
+            this.label3.Font = new System.Drawing.Font("굴림", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Location = new System.Drawing.Point(358, 65);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(69, 19);
+            this.label3.Size = new System.Drawing.Size(99, 28);
             this.label3.TabIndex = 6;
             this.label3.Text = "로그인";
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 360);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

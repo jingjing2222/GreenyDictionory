@@ -21,5 +21,13 @@ namespace team10_24
         {
 
         }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            Form6 form6 = new Form6(); // Create an instance of Form6
+            form6.Show(); // Show Form6
+            this.Close();
+        }
+
     }
 }
