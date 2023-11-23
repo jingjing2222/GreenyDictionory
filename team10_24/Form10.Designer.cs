@@ -305,6 +305,7 @@ namespace team10_24
             this.Delete.TabIndex = 116;
             this.Delete.Text = "삭제";
             this.Delete.UseVisualStyleBackColor = true;
+            this.Delete.Click += new System.EventHandler(this.Delete_Click);
             // 
             // Modify
             // 
@@ -315,6 +316,7 @@ namespace team10_24
             this.Modify.TabIndex = 115;
             this.Modify.Text = "수정";
             this.Modify.UseVisualStyleBackColor = true;
+            this.Modify.Click += new System.EventHandler(this.Modify_Click);
             // 
             // bookmark
             // 
