@@ -33,9 +33,9 @@ namespace team10_24
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.titleTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.contentTextBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.back = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -77,14 +77,14 @@ namespace team10_24
             this.label3.TabIndex = 7;
             this.label3.Text = "제목";
             // 
-            // textBox1
+            // titleTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(238, 208);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox1.Size = new System.Drawing.Size(246, 45);
-            this.textBox1.TabIndex = 8;
+            this.titleTextBox.Location = new System.Drawing.Point(238, 208);
+            this.titleTextBox.Multiline = true;
+            this.titleTextBox.Name = "titleTextBox";
+            this.titleTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.titleTextBox.Size = new System.Drawing.Size(246, 45);
+            this.titleTextBox.TabIndex = 8;
             // 
             // label4
             // 
@@ -96,14 +96,14 @@ namespace team10_24
             this.label4.TabIndex = 9;
             this.label4.Text = "내용";
             // 
-            // textBox2
+            // contentTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(238, 315);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox2.Size = new System.Drawing.Size(335, 186);
-            this.textBox2.TabIndex = 10;
+            this.contentTextBox.Location = new System.Drawing.Point(238, 315);
+            this.contentTextBox.Multiline = true;
+            this.contentTextBox.Name = "contentTextBox";
+            this.contentTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.contentTextBox.Size = new System.Drawing.Size(335, 186);
+            this.contentTextBox.TabIndex = 10;
             // 
             // button1
             // 
@@ -113,6 +113,7 @@ namespace team10_24
             this.button1.TabIndex = 11;
             this.button1.Text = "추가";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // back
             // 
@@ -131,9 +132,9 @@ namespace team10_24
             this.ClientSize = new System.Drawing.Size(800, 593);
             this.Controls.Add(this.back);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.contentTextBox);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.titleTextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label2);
@@ -151,9 +152,9 @@ namespace team10_24
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox titleTextBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox contentTextBox;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button back;
     }
