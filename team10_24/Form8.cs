@@ -12,6 +12,7 @@ namespace team10_24
 {
     public partial class Form8 : Form
     {
+        private DatabaseManager dbManager;
         public Form8()
         {
             InitializeComponent();
@@ -20,6 +21,7 @@ namespace team10_24
 
         private void InitializeDataGridView()
         {
+            dbManager = new DatabaseManager();
             // DataGridView 컬럼 초기화
             dataGridView1.Columns.Add("plantName", "이름");
             dataGridView1.Columns.Add("plantColor", "꽃 색");
@@ -61,6 +63,24 @@ namespace team10_24
             form4.Show(); // Show Form4
             this.Close();
         }
+        public void SetSearchCriteria(string plantName, string colorValue, string seasonValue)
+        {
+            List<DatabaseManager.Plantdata> searchedPlants = dbManager.SearchPlants(plantName, colorValue, seasonValue);
+
+            dataGridView1.Rows.Clear(); // 기존 데이터 클리어
+            if (searchedPlants.Count > 0)
+            {
+                foreach (var plant in searchedPlants)
+                {
+                    dataGridView1.Rows.Add(plant.plant_name, plant.plant_color, plant.bloom_season);
+                }
+            }
+            else
+            {
+                MessageBox.Show("검색된 식물이 없습니다.");
+            }
+        }
+
 
     }
 }

@@ -12,7 +12,7 @@ namespace team10_24
     {
         private MySqlConnection connection;
         private string connectionString = "server=webp.flykorea.kr;user=hpjw;database=hpjwDB;port=13306;password=qwer!@!@1234;";
-        
+
         public DatabaseManager()
         {
             connection = new MySqlConnection(this.connectionString);
@@ -54,14 +54,14 @@ namespace team10_24
             catch (Exception ex)
             {
                 Console.WriteLine("연결 종료 오류: " + ex.Message);
-  
+
             }
         }
         public bool Id_check(string inputId) //아이디 중복 확인 버튼에 사용되는 메서드
         {
             try
             {
-                string query = "SELECT id FROM UserTable WHERE id = @inputId";  
+                string query = "SELECT id FROM UserTable WHERE id = @inputId";
 
                 using (MySqlCommand cmd = new MySqlCommand(query, connection))
                 {
@@ -155,22 +155,24 @@ namespace team10_24
                 return null;
             }
         }
-        private readonly Dictionary<string, string> colorMapping = new Dictionary<string, string>
-        {
-            {"white", "흰색"}, {"green", "초록색"}, {"brown", "갈색"},
-            {"yellow", "노랑"}, {"orange", "주황"}, {"pink", "핑크"},
-            {"red", "빨강"}, {"purple", "보라"}, {"hotpink", "핫핑크"},
-            {"blue", "파랑"}, {"black", "검정"}
-        };
+        // 색상과 계절에 대한 영어-한국어 매핑 딕셔너리
+        public static readonly Dictionary<string, string> colorMapping = new Dictionary<string, string>
+{
+    {"white", "흰색"}, {"green", "초록색"}, {"brown", "갈색"},
+    {"yellow", "노랑"}, {"orange", "주황"}, {"pink", "핑크"},
+    {"red", "빨강"}, {"purple", "보라"}, {"hotpink", "핫핑크"},
+    {"blue", "파랑"}, {"black", "검정"}
+};
 
-        private readonly Dictionary<string, string> seasonMapping = new Dictionary<string, string>
-        {
-            {"spring", "봄"}, {"summer", "여름"}, {"fall", "가을"}, {"winter", "겨울"}
-        };
+        public static readonly Dictionary<string, string> seasonMapping = new Dictionary<string, string>
+{
+    {"spring", "봄"}, {"summer", "여름"}, {"fall", "가을"}, {"winter", "겨울"}
+};
 
-        public Plantdata SearchPlants(string plantName, string color, string season)
+        // 식물 데이터를 검색하는 메서드
+        public List<Plantdata> SearchPlants(string plantName, string color, string season)
         {
-            Plantdata plantData = null;
+            List<Plantdata> plants = new List<Plantdata>();
 
             string query = "SELECT * FROM PlantTable WHERE 1=1";
             List<MySqlParameter> parameters = new List<MySqlParameter>();
@@ -181,16 +183,16 @@ namespace team10_24
                 parameters.Add(new MySqlParameter("@plantName", $"%{plantName}%"));
             }
 
-            if (!string.IsNullOrEmpty(color) && colorMapping.TryGetValue(color, out string koreanColor))
+            if (!string.IsNullOrEmpty(color))
             {
                 query += " AND plant_color = @plantColor";
-                parameters.Add(new MySqlParameter("@plantColor", koreanColor));
+                parameters.Add(new MySqlParameter("@plantColor", color));
             }
 
-            if (!string.IsNullOrEmpty(season) && seasonMapping.TryGetValue(season, out string koreanSeason))
+            if (!string.IsNullOrEmpty(season))
             {
                 query += " AND bloom_season = @bloomSeason";
-                parameters.Add(new MySqlParameter("@bloomSeason", koreanSeason));
+                parameters.Add(new MySqlParameter("@bloomSeason", season));
             }
 
             try
@@ -201,15 +203,16 @@ namespace team10_24
 
                 using (MySqlDataReader reader = command.ExecuteReader())
                 {
-                    if (reader.Read())
+                    while (reader.Read())
                     {
-                        plantData = new Plantdata
+                        Plantdata plantData = new Plantdata
                         {
                             plant_id = reader.GetInt32("plant_id"),
                             plant_name = reader.GetString("plant_name"),
                             bloom_season = reader.GetString("bloom_season"),
                             plant_color = reader.GetString("plant_color")
                         };
+                        plants.Add(plantData);
                     }
                 }
             }
@@ -222,7 +225,10 @@ namespace team10_24
                 connection.Close();
             }
 
-            return plantData;
+            return plants;
         }
+
+
+
     }
 }

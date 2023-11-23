@@ -14,12 +14,10 @@ namespace team10_24
 {
     public partial class Form4 : Form
     {
-        private DatabaseManager dbManager;
 
         public Form4()
         {
             InitializeComponent();
-            dbManager = new DatabaseManager();
         }
 
         private void white_CheckedChanged(object sender, EventArgs e)
@@ -106,37 +104,52 @@ namespace team10_24
 
         private void Search_Click(object sender, EventArgs e)
         {
-            // name_search 텍스트 박스에서 식물 이름을 가져옵니다.
             string plantName = name_search.Text;
-
-            // 꽃 색상을 선택한 라디오 버튼에서 가져옵니다.
             string selectedColor = GetSelectedRadioButtonValue(groupBoxColors);
-
-            // 개화기를 선택한 라디오 버튼에서 가져옵니다.
             string selectedSeason = GetSelectedRadioButtonValue(groupBoxSeasons);
-            MessageBox.Show(selectedColor + selectedSeason,"??");
 
-            // SearchPlants 메서드를 호출하여 식물 데이터를 검색합니다.
-            DatabaseManager.Plantdata searchedPlant = dbManager.SearchPlants(plantName, selectedColor, selectedSeason);
+            // 선택된 색상과 계절의 실제 값(한국어)을 가져옵니다.
+            string colorValue = null;
+            string seasonValue = null;
+
+            if (!string.IsNullOrEmpty(selectedColor) && DatabaseManager.colorMapping.ContainsKey(selectedColor))
+            {
+                colorValue = DatabaseManager.colorMapping[selectedColor];
+            }
+
+            if (!string.IsNullOrEmpty(selectedSeason) && DatabaseManager.seasonMapping.ContainsKey(selectedSeason))
+            {
+                seasonValue = DatabaseManager.seasonMapping[selectedSeason];
+            }
+            MessageBox.Show(colorValue + seasonValue);
 
             Form8 form8 = new Form8();
-            form8.SetPlantData(searchedPlant); // Form8에 식물 데이터 설정
+            form8.SetSearchCriteria(plantName, colorValue, seasonValue);
             form8.Show();
             this.Close();
         }
 
+
+
+
         // 그룹박스 내에서 선택된 라디오 버튼의 값을 반환하는 메서드
         private string GetSelectedRadioButtonValue(GroupBox groupBox)
         {
-            foreach (RadioButton rb in groupBox.Controls)
+            foreach (Control control in groupBox.Controls)
             {
-                if (rb.Checked)
+                // Control이 RadioButton인 경우에만 처리
+                if (control is RadioButton rb && rb.Checked)
                 {
-                    return rb.Name; // 라디오 버튼의 Name 속성을 반환합니다.
+                    return rb.Name; // 선택된 RadioButton의 Name 속성 반환
                 }
             }
-            return null; // 선택된 라디오 버튼이 없는 경우
+            return null; // 선택된 RadioButton이 없는 경우
         }
 
+
+        private void groupBoxColors_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }
