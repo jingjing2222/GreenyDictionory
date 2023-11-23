@@ -228,7 +228,107 @@ namespace team10_24
             return plants;
         }
 
+        public bool UpdatePlantData(int plantId, string newName, string newColor, string newSeason)
+        {
+            try
+            {
+                string query = "UPDATE PlantTable SET plant_name = @newName, plant_color = @newColor, bloom_season = @newSeason WHERE plant_id = @plantId";
 
+                using (MySqlCommand command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@plantId", plantId);
+                    command.Parameters.AddWithValue("@newName", newName);
+                    command.Parameters.AddWithValue("@newColor", newColor);
+                    command.Parameters.AddWithValue("@newSeason", newSeason);
 
+                    connection.Open();
+                    int result = command.ExecuteNonQuery();
+
+                    return result > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Update Error: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+        public bool CheckIfPlantExists(string plantName, string plantColor, string bloomSeason)
+        {
+            string query = "SELECT COUNT(*) FROM PlantTable WHERE plant_name = @plantName AND plant_color = @plantColor AND bloom_season = @bloomSeason";
+            MySqlCommand command = new MySqlCommand(query, connection);
+
+            // 매개변수 추가
+            command.Parameters.AddWithValue("@plantName", plantName);
+            command.Parameters.AddWithValue("@plantColor", plantColor);
+            command.Parameters.AddWithValue("@bloomSeason", bloomSeason);
+
+            try
+            {
+                connection.Open();
+                int count = Convert.ToInt32(command.ExecuteScalar());
+                return count > 0; // 식물이 존재하면 true, 그렇지 않으면 false 반환
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in CheckIfPlantExists: " + ex.Message);
+                return false; // 예외 발생 시 false 반환
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+        public bool DeletePlantData(int plantId)
+        {
+            try
+            {
+                string query = "DELETE FROM PlantTable WHERE plant_id = @plantId";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@plantId", plantId);
+                connection.Open();
+                int result = cmd.ExecuteNonQuery();
+
+                return result > 0; // 삭제가 성공적으로 수행되면 true 반환
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in DeletePlantData: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+        public bool AddPlantData(string plantName, string plantColor, string bloomSeason)
+        {
+            try
+            {
+                string query = "INSERT INTO PlantTable (plant_name, plant_color, bloom_season) VALUES (@plantName, @plantColor, @bloomSeason)";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+                cmd.Parameters.AddWithValue("@plantName", plantName);
+                cmd.Parameters.AddWithValue("@plantColor", plantColor);
+                cmd.Parameters.AddWithValue("@bloomSeason", bloomSeason);
+
+                connection.Open();
+                int result = cmd.ExecuteNonQuery();
+
+                return result > 0; // 성공적으로 추가되면 true 반환
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in AddPlantData: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
     }
 }

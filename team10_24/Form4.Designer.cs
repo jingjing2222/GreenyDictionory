@@ -34,36 +34,36 @@ namespace team10_24
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBoxColors = new System.Windows.Forms.GroupBox();
-            this.white = new System.Windows.Forms.RadioButton();
-            this.green = new System.Windows.Forms.RadioButton();
-            this.brown = new System.Windows.Forms.RadioButton();
-            this.yellow = new System.Windows.Forms.RadioButton();
-            this.orange = new System.Windows.Forms.RadioButton();
             this.pink = new System.Windows.Forms.RadioButton();
-            this.red = new System.Windows.Forms.RadioButton();
-            this.purple = new System.Windows.Forms.RadioButton();
-            this.hotpink = new System.Windows.Forms.RadioButton();
             this.blue = new System.Windows.Forms.RadioButton();
             this.black = new System.Windows.Forms.RadioButton();
+            this.purple = new System.Windows.Forms.RadioButton();
+            this.hotpink = new System.Windows.Forms.RadioButton();
+            this.red = new System.Windows.Forms.RadioButton();
+            this.orange = new System.Windows.Forms.RadioButton();
+            this.yellow = new System.Windows.Forms.RadioButton();
+            this.brown = new System.Windows.Forms.RadioButton();
+            this.white = new System.Windows.Forms.RadioButton();
+            this.green = new System.Windows.Forms.RadioButton();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.groupBoxSeasons = new System.Windows.Forms.GroupBox();
-            this.spring = new System.Windows.Forms.RadioButton();
-            this.summer = new System.Windows.Forms.RadioButton();
-            this.fall = new System.Windows.Forms.RadioButton();
             this.winter = new System.Windows.Forms.RadioButton();
+            this.fall = new System.Windows.Forms.RadioButton();
+            this.summer = new System.Windows.Forms.RadioButton();
+            this.spring = new System.Windows.Forms.RadioButton();
+            this.label4 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
-            this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.name_search = new System.Windows.Forms.TextBox();
@@ -73,14 +73,14 @@ namespace team10_24
             this.label10 = new System.Windows.Forms.Label();
             this.back = new System.Windows.Forms.Button();
             this.groupBoxColors.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.groupBoxSeasons.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
@@ -119,66 +119,6 @@ namespace team10_24
             this.groupBoxColors.TabStop = false;
             this.groupBoxColors.Enter += new System.EventHandler(this.groupBoxColors_Enter);
             // 
-            // white
-            // 
-            this.white.AutoSize = true;
-            this.white.Location = new System.Drawing.Point(8, 49);
-            this.white.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.white.Name = "white";
-            this.white.Size = new System.Drawing.Size(14, 13);
-            this.white.TabIndex = 12;
-            this.white.TabStop = true;
-            this.white.UseVisualStyleBackColor = true;
-            this.white.CheckedChanged += new System.EventHandler(this.white_CheckedChanged);
-            // 
-            // green
-            // 
-            this.green.AutoSize = true;
-            this.green.Location = new System.Drawing.Point(97, 49);
-            this.green.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.green.Name = "green";
-            this.green.Size = new System.Drawing.Size(14, 13);
-            this.green.TabIndex = 13;
-            this.green.TabStop = true;
-            this.green.UseVisualStyleBackColor = true;
-            this.green.CheckedChanged += new System.EventHandler(this.green_CheckedChanged);
-            // 
-            // brown
-            // 
-            this.brown.AutoSize = true;
-            this.brown.Location = new System.Drawing.Point(187, 49);
-            this.brown.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.brown.Name = "brown";
-            this.brown.Size = new System.Drawing.Size(14, 13);
-            this.brown.TabIndex = 14;
-            this.brown.TabStop = true;
-            this.brown.UseVisualStyleBackColor = true;
-            this.brown.CheckedChanged += new System.EventHandler(this.brown_CheckedChanged);
-            // 
-            // yellow
-            // 
-            this.yellow.AutoSize = true;
-            this.yellow.Location = new System.Drawing.Point(280, 49);
-            this.yellow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.yellow.Name = "yellow";
-            this.yellow.Size = new System.Drawing.Size(14, 13);
-            this.yellow.TabIndex = 15;
-            this.yellow.TabStop = true;
-            this.yellow.UseVisualStyleBackColor = true;
-            this.yellow.CheckedChanged += new System.EventHandler(this.yellow_CheckedChanged);
-            // 
-            // orange
-            // 
-            this.orange.AutoSize = true;
-            this.orange.Location = new System.Drawing.Point(375, 49);
-            this.orange.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.orange.Name = "orange";
-            this.orange.Size = new System.Drawing.Size(14, 13);
-            this.orange.TabIndex = 16;
-            this.orange.TabStop = true;
-            this.orange.UseVisualStyleBackColor = true;
-            this.orange.CheckedChanged += new System.EventHandler(this.orange_CheckedChanged);
-            // 
             // pink
             // 
             this.pink.AutoSize = true;
@@ -190,42 +130,6 @@ namespace team10_24
             this.pink.TabStop = true;
             this.pink.UseVisualStyleBackColor = true;
             this.pink.CheckedChanged += new System.EventHandler(this.pink_CheckedChanged);
-            // 
-            // red
-            // 
-            this.red.AutoSize = true;
-            this.red.Location = new System.Drawing.Point(8, 84);
-            this.red.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.red.Name = "red";
-            this.red.Size = new System.Drawing.Size(14, 13);
-            this.red.TabIndex = 18;
-            this.red.TabStop = true;
-            this.red.UseVisualStyleBackColor = true;
-            this.red.CheckedChanged += new System.EventHandler(this.red_CheckedChanged);
-            // 
-            // purple
-            // 
-            this.purple.AutoSize = true;
-            this.purple.Location = new System.Drawing.Point(97, 84);
-            this.purple.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.purple.Name = "purple";
-            this.purple.Size = new System.Drawing.Size(14, 13);
-            this.purple.TabIndex = 19;
-            this.purple.TabStop = true;
-            this.purple.UseVisualStyleBackColor = true;
-            this.purple.CheckedChanged += new System.EventHandler(this.purple_CheckedChanged);
-            // 
-            // hotpink
-            // 
-            this.hotpink.AutoSize = true;
-            this.hotpink.Location = new System.Drawing.Point(187, 84);
-            this.hotpink.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.hotpink.Name = "hotpink";
-            this.hotpink.Size = new System.Drawing.Size(14, 13);
-            this.hotpink.TabIndex = 20;
-            this.hotpink.TabStop = true;
-            this.hotpink.UseVisualStyleBackColor = true;
-            this.hotpink.CheckedChanged += new System.EventHandler(this.hotpink_CheckedChanged);
             // 
             // blue
             // 
@@ -251,6 +155,122 @@ namespace team10_24
             this.black.UseVisualStyleBackColor = true;
             this.black.CheckedChanged += new System.EventHandler(this.black_CheckedChanged);
             // 
+            // purple
+            // 
+            this.purple.AutoSize = true;
+            this.purple.Location = new System.Drawing.Point(97, 84);
+            this.purple.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.purple.Name = "purple";
+            this.purple.Size = new System.Drawing.Size(14, 13);
+            this.purple.TabIndex = 19;
+            this.purple.TabStop = true;
+            this.purple.UseVisualStyleBackColor = true;
+            this.purple.CheckedChanged += new System.EventHandler(this.purple_CheckedChanged);
+            // 
+            // hotpink
+            // 
+            this.hotpink.AutoSize = true;
+            this.hotpink.Location = new System.Drawing.Point(187, 84);
+            this.hotpink.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.hotpink.Name = "hotpink";
+            this.hotpink.Size = new System.Drawing.Size(14, 13);
+            this.hotpink.TabIndex = 20;
+            this.hotpink.TabStop = true;
+            this.hotpink.UseVisualStyleBackColor = true;
+            this.hotpink.CheckedChanged += new System.EventHandler(this.hotpink_CheckedChanged);
+            // 
+            // red
+            // 
+            this.red.AutoSize = true;
+            this.red.Location = new System.Drawing.Point(8, 84);
+            this.red.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.red.Name = "red";
+            this.red.Size = new System.Drawing.Size(14, 13);
+            this.red.TabIndex = 18;
+            this.red.TabStop = true;
+            this.red.UseVisualStyleBackColor = true;
+            this.red.CheckedChanged += new System.EventHandler(this.red_CheckedChanged);
+            // 
+            // orange
+            // 
+            this.orange.AutoSize = true;
+            this.orange.Location = new System.Drawing.Point(375, 49);
+            this.orange.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.orange.Name = "orange";
+            this.orange.Size = new System.Drawing.Size(14, 13);
+            this.orange.TabIndex = 16;
+            this.orange.TabStop = true;
+            this.orange.UseVisualStyleBackColor = true;
+            this.orange.CheckedChanged += new System.EventHandler(this.orange_CheckedChanged);
+            // 
+            // yellow
+            // 
+            this.yellow.AutoSize = true;
+            this.yellow.Location = new System.Drawing.Point(280, 49);
+            this.yellow.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.yellow.Name = "yellow";
+            this.yellow.Size = new System.Drawing.Size(14, 13);
+            this.yellow.TabIndex = 15;
+            this.yellow.TabStop = true;
+            this.yellow.UseVisualStyleBackColor = true;
+            this.yellow.CheckedChanged += new System.EventHandler(this.yellow_CheckedChanged);
+            // 
+            // brown
+            // 
+            this.brown.AutoSize = true;
+            this.brown.Location = new System.Drawing.Point(187, 49);
+            this.brown.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.brown.Name = "brown";
+            this.brown.Size = new System.Drawing.Size(14, 13);
+            this.brown.TabIndex = 14;
+            this.brown.TabStop = true;
+            this.brown.UseVisualStyleBackColor = true;
+            this.brown.CheckedChanged += new System.EventHandler(this.brown_CheckedChanged);
+            // 
+            // white
+            // 
+            this.white.AutoSize = true;
+            this.white.Location = new System.Drawing.Point(8, 49);
+            this.white.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.white.Name = "white";
+            this.white.Size = new System.Drawing.Size(14, 13);
+            this.white.TabIndex = 12;
+            this.white.TabStop = true;
+            this.white.UseVisualStyleBackColor = true;
+            this.white.CheckedChanged += new System.EventHandler(this.white_CheckedChanged);
+            // 
+            // green
+            // 
+            this.green.AutoSize = true;
+            this.green.Location = new System.Drawing.Point(97, 49);
+            this.green.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.green.Name = "green";
+            this.green.Size = new System.Drawing.Size(14, 13);
+            this.green.TabIndex = 13;
+            this.green.TabStop = true;
+            this.green.UseVisualStyleBackColor = true;
+            this.green.CheckedChanged += new System.EventHandler(this.green_CheckedChanged);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
+            this.pictureBox7.Location = new System.Drawing.Point(117, 83);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(43, 15);
+            this.pictureBox7.TabIndex = 7;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(299, 47);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(43, 15);
+            this.pictureBox4.TabIndex = 4;
+            this.pictureBox4.TabStop = false;
+            // 
             // groupBoxSeasons
             // 
             this.groupBoxSeasons.Controls.Add(this.winter);
@@ -264,29 +284,17 @@ namespace team10_24
             this.groupBoxSeasons.TabIndex = 42;
             this.groupBoxSeasons.TabStop = false;
             // 
-            // spring
+            // winter
             // 
-            this.spring.AutoSize = true;
-            this.spring.Location = new System.Drawing.Point(11, 50);
-            this.spring.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.spring.Name = "spring";
-            this.spring.Size = new System.Drawing.Size(14, 13);
-            this.spring.TabIndex = 28;
-            this.spring.TabStop = true;
-            this.spring.UseVisualStyleBackColor = true;
-            this.spring.CheckedChanged += new System.EventHandler(this.spring_CheckedChanged);
-            // 
-            // summer
-            // 
-            this.summer.AutoSize = true;
-            this.summer.Location = new System.Drawing.Point(83, 50);
-            this.summer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.summer.Name = "summer";
-            this.summer.Size = new System.Drawing.Size(14, 13);
-            this.summer.TabIndex = 29;
-            this.summer.TabStop = true;
-            this.summer.UseVisualStyleBackColor = true;
-            this.summer.CheckedChanged += new System.EventHandler(this.summer_CheckedChanged);
+            this.winter.AutoSize = true;
+            this.winter.Location = new System.Drawing.Point(256, 50);
+            this.winter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.winter.Name = "winter";
+            this.winter.Size = new System.Drawing.Size(14, 13);
+            this.winter.TabIndex = 31;
+            this.winter.TabStop = true;
+            this.winter.UseVisualStyleBackColor = true;
+            this.winter.CheckedChanged += new System.EventHandler(this.winter_CheckedChanged);
             // 
             // fall
             // 
@@ -300,17 +308,39 @@ namespace team10_24
             this.fall.UseVisualStyleBackColor = true;
             this.fall.CheckedChanged += new System.EventHandler(this.fall_CheckedChanged);
             // 
-            // winter
+            // summer
             // 
-            this.winter.AutoSize = true;
-            this.winter.Location = new System.Drawing.Point(256, 50);
-            this.winter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.winter.Name = "winter";
-            this.winter.Size = new System.Drawing.Size(14, 13);
-            this.winter.TabIndex = 31;
-            this.winter.TabStop = true;
-            this.winter.UseVisualStyleBackColor = true;
-            this.winter.CheckedChanged += new System.EventHandler(this.winter_CheckedChanged);
+            this.summer.AutoSize = true;
+            this.summer.Location = new System.Drawing.Point(83, 50);
+            this.summer.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.summer.Name = "summer";
+            this.summer.Size = new System.Drawing.Size(14, 13);
+            this.summer.TabIndex = 29;
+            this.summer.TabStop = true;
+            this.summer.UseVisualStyleBackColor = true;
+            this.summer.CheckedChanged += new System.EventHandler(this.summer_CheckedChanged);
+            // 
+            // spring
+            // 
+            this.spring.AutoSize = true;
+            this.spring.Location = new System.Drawing.Point(11, 50);
+            this.spring.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.spring.Name = "spring";
+            this.spring.Size = new System.Drawing.Size(14, 13);
+            this.spring.TabIndex = 28;
+            this.spring.TabStop = true;
+            this.spring.UseVisualStyleBackColor = true;
+            this.spring.CheckedChanged += new System.EventHandler(this.spring_CheckedChanged);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("굴림", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Location = new System.Drawing.Point(103, 48);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(37, 15);
+            this.label4.TabIndex = 25;
+            this.label4.Text = "여름";
             // 
             // pictureBox1
             // 
@@ -342,16 +372,6 @@ namespace team10_24
             this.pictureBox3.TabIndex = 3;
             this.pictureBox3.TabStop = false;
             // 
-            // pictureBox4
-            // 
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(299, 47);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(43, 15);
-            this.pictureBox4.TabIndex = 4;
-            this.pictureBox4.TabStop = false;
-            // 
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
@@ -371,16 +391,6 @@ namespace team10_24
             this.pictureBox6.Size = new System.Drawing.Size(43, 15);
             this.pictureBox6.TabIndex = 6;
             this.pictureBox6.TabStop = false;
-            // 
-            // pictureBox7
-            // 
-            this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(117, 83);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(43, 15);
-            this.pictureBox7.TabIndex = 7;
-            this.pictureBox7.TabStop = false;
             // 
             // pictureBox8
             // 
@@ -442,16 +452,6 @@ namespace team10_24
             this.label3.TabIndex = 24;
             this.label3.Text = "봄";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("굴림", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.Location = new System.Drawing.Point(103, 48);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(37, 15);
-            this.label4.TabIndex = 25;
-            this.label4.Text = "여름";
-            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -510,6 +510,7 @@ namespace team10_24
             this.Add.TabIndex = 39;
             this.Add.Text = "추가";
             this.Add.UseVisualStyleBackColor = true;
+            this.Add.Click += new System.EventHandler(this.Add_Click);
             // 
             // label10
             // 
@@ -563,15 +564,15 @@ namespace team10_24
             this.Text = "Form4";
             this.groupBoxColors.ResumeLayout(false);
             this.groupBoxColors.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.groupBoxSeasons.ResumeLayout(false);
             this.groupBoxSeasons.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox8)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();

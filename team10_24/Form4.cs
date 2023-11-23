@@ -121,7 +121,6 @@ namespace team10_24
             {
                 seasonValue = DatabaseManager.seasonMapping[selectedSeason];
             }
-            MessageBox.Show(colorValue + seasonValue);
 
             Form8 form8 = new Form8();
             form8.SetSearchCriteria(plantName, colorValue, seasonValue);
@@ -151,5 +150,40 @@ namespace team10_24
         {
 
         }
+
+        private void Add_Click(object sender, EventArgs e)
+        {
+            string plantName = name_search.Text;
+            string selectedColor = GetSelectedRadioButtonValue(groupBoxColors);
+            string selectedSeason = GetSelectedRadioButtonValue(groupBoxSeasons);
+
+            string colorValue = selectedColor != null ? DatabaseManager.colorMapping[selectedColor] : null;
+            string seasonValue = selectedSeason != null ? DatabaseManager.seasonMapping[selectedSeason] : null;
+
+            if (!string.IsNullOrEmpty(plantName) && colorValue != null && seasonValue != null)
+            {
+                DatabaseManager dbManager = new DatabaseManager();
+                if (!dbManager.CheckIfPlantExists(plantName, colorValue, seasonValue))
+                {
+                    if (dbManager.AddPlantData(plantName, colorValue, seasonValue))
+                    {
+                        MessageBox.Show("식물 데이터가 성공적으로 추가되었습니다.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("식물 데이터 추가에 실패했습니다.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("동일한 이름, 색상, 계절의 식물이 이미 존재합니다.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("모든 필드를 올바르게 채워주세요.");
+            }
+        }
+
     }
 }
