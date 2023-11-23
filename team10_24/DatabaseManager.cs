@@ -12,11 +12,26 @@ namespace team10_24
     {
         private MySqlConnection connection;
         private string connectionString = "server=webp.flykorea.kr;user=hpjw;database=hpjwDB;port=13306;password=qwer!@!@1234;";
-    
+        
         public DatabaseManager()
         {
             connection = new MySqlConnection(this.connectionString);
         }
+        public class UserData
+        {
+            public string Id { get; set; }
+            public string Password { get; set; }
+            public string Email { get; set; }
+            public string Username { get; set; }
+        }
+        public class Plantdata
+        {
+            public int plant_id { get; set; }
+            public string plant_name { get; set; }
+            public string bloom_season { get; set; }
+            public string plant_color { get; set; }
+        }
+
         public void Connect()
         {
             try
@@ -42,7 +57,7 @@ namespace team10_24
   
             }
         }
-        public bool Id_check(string inputId)
+        public bool Id_check(string inputId) //아이디 중복 확인 버튼에 사용되는 메서드
         {
             try
             {
@@ -74,7 +89,7 @@ namespace team10_24
                 return true;
             }
         }
-        public bool Register(string id, string pw, string email, string username)
+        public bool Register(string id, string pw, string email, string username) //회원가입 버튼 클릭 시 사용되는 메서드
         {
             try
             {
@@ -95,7 +110,7 @@ namespace team10_24
                 return false; // 추가 실패를 나타내는 값
             }
         }
-        public bool IsValidEmail(string email)
+        public bool IsValidEmail(string email) //이메일 형식 확인 메서드
         {
             // 간단한 이메일 형식의 정규 표현식
             string pattern = @"^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$";
@@ -104,6 +119,110 @@ namespace team10_24
         }
 
 
+        public UserData GetUserData(string userId) //로그인 할 때 사용
+        {
+            try
+            {
+                string query = "SELECT id, password, email, username FROM UserTable WHERE id = @userId";
 
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@userId", userId);
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            // 데이터베이스에서 읽어온 값을 사용자 정보 객체에 매핑
+                            UserData userData = new UserData
+                            {
+                                Id = reader.GetString("id"),
+                                Password = reader.GetString("password"),
+                                Email = reader.GetString("email"),
+                                Username = reader.GetString("username")
+                            };
+
+                            return userData;
+                        }
+                    }
+                }
+                // 사용자 정보가 없을 경우 null 반환
+                return null;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("데이터 조회 중 오류 발생: " + ex.Message);
+                return null;
+            }
+        }
+        private readonly Dictionary<string, string> colorMapping = new Dictionary<string, string>
+        {
+            {"white", "흰색"}, {"green", "초록색"}, {"brown", "갈색"},
+            {"yellow", "노랑"}, {"orange", "주황"}, {"pink", "핑크"},
+            {"red", "빨강"}, {"purple", "보라"}, {"hotpink", "핫핑크"},
+            {"blue", "파랑"}, {"black", "검정"}
+        };
+
+        private readonly Dictionary<string, string> seasonMapping = new Dictionary<string, string>
+        {
+            {"spring", "봄"}, {"summer", "여름"}, {"fall", "가을"}, {"winter", "겨울"}
+        };
+
+        public Plantdata SearchPlants(string plantName, string color, string season)
+        {
+            Plantdata plantData = null;
+
+            string query = "SELECT * FROM PlantTable WHERE 1=1";
+            List<MySqlParameter> parameters = new List<MySqlParameter>();
+
+            if (!string.IsNullOrEmpty(plantName))
+            {
+                query += " AND plant_name LIKE @plantName";
+                parameters.Add(new MySqlParameter("@plantName", $"%{plantName}%"));
+            }
+
+            if (!string.IsNullOrEmpty(color) && colorMapping.TryGetValue(color, out string koreanColor))
+            {
+                query += " AND plant_color = @plantColor";
+                parameters.Add(new MySqlParameter("@plantColor", koreanColor));
+            }
+
+            if (!string.IsNullOrEmpty(season) && seasonMapping.TryGetValue(season, out string koreanSeason))
+            {
+                query += " AND bloom_season = @bloomSeason";
+                parameters.Add(new MySqlParameter("@bloomSeason", koreanSeason));
+            }
+
+            try
+            {
+                connection.Open();
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddRange(parameters.ToArray());
+
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        plantData = new Plantdata
+                        {
+                            plant_id = reader.GetInt32("plant_id"),
+                            plant_name = reader.GetString("plant_name"),
+                            bloom_season = reader.GetString("bloom_season"),
+                            plant_color = reader.GetString("plant_color")
+                        };
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in SearchPlants: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return plantData;
+        }
     }
 }
