@@ -24,6 +24,13 @@ namespace team10_24
             public string Email { get; set; }
             public string Username { get; set; }
         }
+        public class Plantdata
+        {
+            public int plant_id { get; set; }
+            public string plant_name { get; set; }
+            public string bloom_season { get; set; }
+            public string plant_color { get; set; }
+        }
 
         public void Connect()
         {
@@ -147,6 +154,75 @@ namespace team10_24
                 Console.WriteLine("데이터 조회 중 오류 발생: " + ex.Message);
                 return null;
             }
+        }
+        private readonly Dictionary<string, string> colorMapping = new Dictionary<string, string>
+        {
+            {"white", "흰색"}, {"green", "초록색"}, {"brown", "갈색"},
+            {"yellow", "노랑"}, {"orange", "주황"}, {"pink", "핑크"},
+            {"red", "빨강"}, {"purple", "보라"}, {"hotpink", "핫핑크"},
+            {"blue", "파랑"}, {"black", "검정"}
+        };
+
+        private readonly Dictionary<string, string> seasonMapping = new Dictionary<string, string>
+        {
+            {"spring", "봄"}, {"summer", "여름"}, {"fall", "가을"}, {"winter", "겨울"}
+        };
+
+        public Plantdata SearchPlants(string plantName, string color, string season)
+        {
+            Plantdata plantData = null;
+
+            string query = "SELECT * FROM PlantTable WHERE 1=1";
+            List<MySqlParameter> parameters = new List<MySqlParameter>();
+
+            if (!string.IsNullOrEmpty(plantName))
+            {
+                query += " AND plant_name LIKE @plantName";
+                parameters.Add(new MySqlParameter("@plantName", $"%{plantName}%"));
+            }
+
+            if (!string.IsNullOrEmpty(color) && colorMapping.TryGetValue(color, out string koreanColor))
+            {
+                query += " AND plant_color = @plantColor";
+                parameters.Add(new MySqlParameter("@plantColor", koreanColor));
+            }
+
+            if (!string.IsNullOrEmpty(season) && seasonMapping.TryGetValue(season, out string koreanSeason))
+            {
+                query += " AND bloom_season = @bloomSeason";
+                parameters.Add(new MySqlParameter("@bloomSeason", koreanSeason));
+            }
+
+            try
+            {
+                connection.Open();
+                MySqlCommand command = new MySqlCommand(query, connection);
+                command.Parameters.AddRange(parameters.ToArray());
+
+                using (MySqlDataReader reader = command.ExecuteReader())
+                {
+                    if (reader.Read())
+                    {
+                        plantData = new Plantdata
+                        {
+                            plant_id = reader.GetInt32("plant_id"),
+                            plant_name = reader.GetString("plant_name"),
+                            bloom_season = reader.GetString("bloom_season"),
+                            plant_color = reader.GetString("plant_color")
+                        };
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in SearchPlants: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return plantData;
         }
     }
 }

@@ -32,6 +32,7 @@ namespace team10_24
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button1 = new System.Windows.Forms.Button();
+            this.back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,18 +58,29 @@ namespace team10_24
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(340, 461);
+            this.button1.Location = new System.Drawing.Point(249, 473);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(109, 47);
+            this.button1.Size = new System.Drawing.Size(106, 35);
             this.button1.TabIndex = 2;
             this.button1.Text = "새로 작성";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // back
+            // 
+            this.back.Location = new System.Drawing.Point(407, 473);
+            this.back.Name = "back";
+            this.back.Size = new System.Drawing.Size(106, 35);
+            this.back.TabIndex = 43;
+            this.back.Text = "돌아가기";
+            this.back.UseVisualStyleBackColor = true;
+            this.back.Click += new System.EventHandler(this.back_Click);
             // 
             // Form11
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 537);
+            this.Controls.Add(this.back);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
@@ -85,5 +97,6 @@ namespace team10_24
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button back;
     }
 }
