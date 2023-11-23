@@ -121,7 +121,6 @@ namespace team10_24
             {
                 seasonValue = DatabaseManager.seasonMapping[selectedSeason];
             }
-            MessageBox.Show(colorValue + seasonValue);
 
             Form8 form8 = new Form8();
             form8.SetSearchCriteria(plantName, colorValue, seasonValue);

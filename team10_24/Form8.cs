@@ -80,6 +80,20 @@ namespace team10_24
                 MessageBox.Show("검색된 식물이 없습니다.");
             }
         }
+        // Form8 클래스 내부
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                var selectedRow = dataGridView1.Rows[e.RowIndex];
+                string plantName = selectedRow.Cells["plantName"].Value.ToString();
+                string plantColor = selectedRow.Cells["plantColor"].Value.ToString();
+                string bloomSeason = selectedRow.Cells["bloomSeason"].Value.ToString();
+
+                Form10 form10 = new Form10(plantName, plantColor, bloomSeason);
+                form10.Show();
+            }
+        }
 
 
     }
