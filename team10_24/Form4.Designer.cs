@@ -45,6 +45,7 @@ namespace team10_24
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.white = new System.Windows.Forms.RadioButton();
+            this.groupBoxColors = new System.Windows.Forms.GroupBox();
             this.green = new System.Windows.Forms.RadioButton();
             this.brown = new System.Windows.Forms.RadioButton();
             this.yellow = new System.Windows.Forms.RadioButton();
@@ -61,6 +62,7 @@ namespace team10_24
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.spring = new System.Windows.Forms.RadioButton();
+            this.groupBoxSeasons = new System.Windows.Forms.GroupBox();
             this.summer = new System.Windows.Forms.RadioButton();
             this.fall = new System.Windows.Forms.RadioButton();
             this.winter = new System.Windows.Forms.RadioButton();
@@ -69,8 +71,6 @@ namespace team10_24
             this.Search = new System.Windows.Forms.Button();
             this.Add = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
-            this.groupBoxColors = new System.Windows.Forms.GroupBox();
-            this.groupBoxSeasons = new System.Windows.Forms.GroupBox();
             this.back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -216,6 +216,14 @@ namespace team10_24
             this.white.TabStop = true;
             this.white.UseVisualStyleBackColor = true;
             this.white.CheckedChanged += new System.EventHandler(this.white_CheckedChanged);
+            // 
+            // groupBoxColors
+            // 
+            this.groupBoxColors.Location = new System.Drawing.Point(27, 153);
+            this.groupBoxColors.Name = "groupBoxColors";
+            this.groupBoxColors.Size = new System.Drawing.Size(549, 118);
+            this.groupBoxColors.TabIndex = 41;
+            this.groupBoxColors.TabStop = false;
             // 
             // green
             // 
@@ -400,6 +408,14 @@ namespace team10_24
             this.spring.UseVisualStyleBackColor = true;
             this.spring.CheckedChanged += new System.EventHandler(this.spring_CheckedChanged);
             // 
+            // groupBoxSeasons
+            // 
+            this.groupBoxSeasons.Location = new System.Drawing.Point(27, 277);
+            this.groupBoxSeasons.Name = "groupBoxSeasons";
+            this.groupBoxSeasons.Size = new System.Drawing.Size(549, 88);
+            this.groupBoxSeasons.TabIndex = 42;
+            this.groupBoxSeasons.TabStop = false;
+            // 
             // summer
             // 
             this.summer.AutoSize = true;
@@ -480,7 +496,7 @@ namespace team10_24
             this.label10.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label10.Location = new System.Drawing.Point(28, 27);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(119, 24);
+            this.label10.Size = new System.Drawing.Size(96, 19);
             this.label10.TabIndex = 40;
             this.label10.Text = "식물 검색";
             // 
@@ -493,85 +509,6 @@ namespace team10_24
             this.back.Text = "돌아가기";
             this.back.UseVisualStyleBackColor = true;
             this.back.Click += new System.EventHandler(this.back_Click);
-            // 
-            // groupBoxColors
-            // 
-            this.groupBoxColors.Location = new System.Drawing.Point(27, 153);
-            this.groupBoxColors.Name = "groupBoxColors";
-            this.groupBoxColors.Size = new System.Drawing.Size(549, 118);
-            this.groupBoxColors.TabIndex = 41;
-            this.groupBoxColors.TabStop = false;
-            // 꽃 색상 라디오 버튼들을 groupBoxColors에 추가
-            groupBoxColors.Controls.Add(this.white);
-            groupBoxColors.Controls.Add(this.green);
-            groupBoxColors.Controls.Add(this.brown);
-            groupBoxColors.Controls.Add(this.yellow);
-            groupBoxColors.Controls.Add(this.orange);
-            groupBoxColors.Controls.Add(this.pink);
-            groupBoxColors.Controls.Add(this.red);
-            groupBoxColors.Controls.Add(this.purple);
-            groupBoxColors.Controls.Add(this.hotpink);
-            groupBoxColors.Controls.Add(this.blue);
-            groupBoxColors.Controls.Add(this.black);
-            this.white.Parent = this.groupBoxColors;
-            groupBoxColors.Controls.Add(this.white);
-
-            this.green.Parent = this.groupBoxColors;
-            groupBoxColors.Controls.Add(this.green);
-
-            this.brown.Parent = this.groupBoxColors;
-            groupBoxColors.Controls.Add(this.brown);
-
-            this.yellow.Parent = this.groupBoxColors;
-            groupBoxColors.Controls.Add(this.yellow);
-
-            this.orange.Parent = this.groupBoxColors;
-            groupBoxColors.Controls.Add(this.orange);
-
-            this.pink.Parent = this.groupBoxColors;
-            groupBoxColors.Controls.Add(this.pink);
-
-            this.red.Parent = this.groupBoxColors;
-            groupBoxColors.Controls.Add(this.red);
-
-            this.purple.Parent = this.groupBoxColors;
-            groupBoxColors.Controls.Add(this.purple);
-
-            this.hotpink.Parent = this.groupBoxColors;
-            groupBoxColors.Controls.Add(this.hotpink);
-
-            this.blue.Parent = this.groupBoxColors;
-            groupBoxColors.Controls.Add(this.blue);
-
-            this.black.Parent = this.groupBoxColors;
-            groupBoxColors.Controls.Add(this.black);
-
-
-            this.Controls.Add(groupBoxColors);
-
-            // 
-            // groupBoxSeasons
-            // 
-            this.groupBoxSeasons.Location = new System.Drawing.Point(27, 277);
-            this.groupBoxSeasons.Name = "groupBoxSeasons";
-            this.groupBoxSeasons.Size = new System.Drawing.Size(549, 88);
-            this.groupBoxSeasons.TabIndex = 42;
-            this.groupBoxSeasons.TabStop = false;
-
-            // 개화기 라디오 버튼들을 groupBoxSeasons에 추가하고 Parent 설정
-            this.spring.Parent = this.groupBoxSeasons;
-            groupBoxSeasons.Controls.Add(this.spring);
-
-            this.summer.Parent = this.groupBoxSeasons;
-            groupBoxSeasons.Controls.Add(this.summer);
-
-            this.fall.Parent = this.groupBoxSeasons;
-            groupBoxSeasons.Controls.Add(this.fall);
-
-            this.winter.Parent = this.groupBoxSeasons;
-            groupBoxSeasons.Controls.Add(this.winter);
-
-            this.Controls.Add(groupBoxSeasons);
             // 
             // Form4
             // 
@@ -635,11 +572,6 @@ namespace team10_24
             this.ResumeLayout(false);
             this.PerformLayout();
 
-        }
-
-        private void Search_Click(object sender, EventArgs e)
-        {
-            throw new NotImplementedException();
         }
 
         #endregion

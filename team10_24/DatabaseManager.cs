@@ -8,7 +8,7 @@ using MySql.Data.MySqlClient;
 
 namespace team10_24
 {
-    class DatabaseManager
+    public class DatabaseManager
     {
         private MySqlConnection connection;
         private string connectionString = "server=webp.flykorea.kr;user=hpjw;database=hpjwDB;port=13306;password=qwer!@!@1234;";

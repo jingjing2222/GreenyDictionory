@@ -15,6 +15,24 @@ namespace team10_24
         public Form8()
         {
             InitializeComponent();
+            InitializeDataGridView();
+        }
+
+        private void InitializeDataGridView()
+        {
+            // DataGridView 컬럼 초기화
+            dataGridView1.Columns.Add("plantName", "이름");
+            dataGridView1.Columns.Add("plantColor", "꽃 색");
+            dataGridView1.Columns.Add("bloomSeason", "개화기");
+        }
+
+        public void SetPlantData(DatabaseManager.Plantdata plantData)
+        {
+            if (plantData != null)
+            {
+                // DataGridView에 행 추가
+                dataGridView1.Rows.Add(plantData.plant_name, plantData.plant_color, plantData.bloom_season);
+            }
         }
 
         private void Modify_Click(object sender, EventArgs e)
