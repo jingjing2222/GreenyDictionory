@@ -31,7 +31,6 @@ namespace team10_24
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form10));
             this.label1 = new System.Windows.Forms.Label();
-            this.Add = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.name_add = new System.Windows.Forms.TextBox();
             this.winter = new System.Windows.Forms.RadioButton();
@@ -66,6 +65,11 @@ namespace team10_24
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
+            this.review = new System.Windows.Forms.Button();
+            this.Delete = new System.Windows.Forms.Button();
+            this.Modify = new System.Windows.Forms.Button();
+            this.bookmark = new System.Windows.Forms.Button();
+            this.back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -87,17 +91,7 @@ namespace team10_24
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(119, 24);
             this.label1.TabIndex = 114;
-            this.label1.Text = "식물 수정";
-            // 
-            // Add
-            // 
-            this.Add.Location = new System.Drawing.Point(77, 473);
-            this.Add.Name = "Add";
-            this.Add.Size = new System.Drawing.Size(116, 38);
-            this.Add.TabIndex = 113;
-            this.Add.Text = "수정";
-            this.Add.UseVisualStyleBackColor = true;
-            this.Add.Click += new System.EventHandler(this.Add_Click);
+            this.label1.Text = "식물 정보";
             // 
             // label9
             // 
@@ -426,13 +420,64 @@ namespace team10_24
             this.label13.TabIndex = 79;
             this.label13.Text = "꽃색";
             // 
+            // review
+            // 
+            this.review.Location = new System.Drawing.Point(430, 471);
+            this.review.Name = "review";
+            this.review.Size = new System.Drawing.Size(101, 30);
+            this.review.TabIndex = 117;
+            this.review.Text = "리뷰";
+            this.review.UseVisualStyleBackColor = true;
+            // 
+            // Delete
+            // 
+            this.Delete.Location = new System.Drawing.Point(248, 471);
+            this.Delete.Name = "Delete";
+            this.Delete.Size = new System.Drawing.Size(101, 30);
+            this.Delete.TabIndex = 116;
+            this.Delete.Text = "삭제";
+            this.Delete.UseVisualStyleBackColor = true;
+            // 
+            // Modify
+            // 
+            this.Modify.Location = new System.Drawing.Point(68, 470);
+            this.Modify.Name = "Modify";
+            this.Modify.Size = new System.Drawing.Size(100, 31);
+            this.Modify.TabIndex = 115;
+            this.Modify.Text = "수정";
+            this.Modify.UseVisualStyleBackColor = true;
+            // 
+            // bookmark
+            // 
+            this.bookmark.BackColor = System.Drawing.SystemColors.ButtonFace;
+            this.bookmark.Image = ((System.Drawing.Image)(resources.GetObject("bookmark.Image")));
+            this.bookmark.Location = new System.Drawing.Point(726, 12);
+            this.bookmark.Name = "bookmark";
+            this.bookmark.Size = new System.Drawing.Size(62, 63);
+            this.bookmark.TabIndex = 118;
+            this.bookmark.UseVisualStyleBackColor = false;
+            // 
+            // back
+            // 
+            this.back.Location = new System.Drawing.Point(605, 470);
+            this.back.Name = "back";
+            this.back.Size = new System.Drawing.Size(101, 29);
+            this.back.TabIndex = 119;
+            this.back.Text = "돌아가기";
+            this.back.UseVisualStyleBackColor = true;
+            this.back.Click += new System.EventHandler(this.back_Click);
+            // 
             // Form10
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 540);
+            this.Controls.Add(this.back);
+            this.Controls.Add(this.bookmark);
+            this.Controls.Add(this.review);
+            this.Controls.Add(this.Delete);
+            this.Controls.Add(this.Modify);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.Add);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.name_add);
             this.Controls.Add(this.winter);
@@ -488,7 +533,6 @@ namespace team10_24
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button Add;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox name_add;
         private System.Windows.Forms.RadioButton winter;
@@ -523,5 +567,10 @@ namespace team10_24
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button review;
+        private System.Windows.Forms.Button Delete;
+        private System.Windows.Forms.Button Modify;
+        private System.Windows.Forms.Button bookmark;
+        private System.Windows.Forms.Button back;
     }
 }

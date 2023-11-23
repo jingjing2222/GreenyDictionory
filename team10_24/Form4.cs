@@ -92,9 +92,12 @@ namespace team10_24
 
         }
 
-        private void Search_Click(object sender, EventArgs e)
+        private void back_Click(object sender, EventArgs e)
         {
-
+            Form16 form16 = new Form16(); // Create an instance of Form16
+            form16.Show(); // Show Form16
+            this.Close();
         }
+
     }
 }

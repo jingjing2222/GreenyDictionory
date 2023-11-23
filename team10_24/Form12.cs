@@ -16,5 +16,12 @@ namespace team10_24
         {
             InitializeComponent();
         }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            Form11 form11 = new Form11(); // Create an instance of Form11
+            form11.Show(); // Show Form11
+            this.Close();
+        }
     }
 }

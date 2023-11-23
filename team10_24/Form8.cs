@@ -36,5 +36,13 @@ namespace team10_24
         {
 
         }
+
+        private void back_Click(object sender, EventArgs e)
+        {
+            Form4 form4 = new Form4(); // Create an instance of Form4
+            form4.Show(); // Show Form4
+            this.Close();
+        }
+
     }
 }
