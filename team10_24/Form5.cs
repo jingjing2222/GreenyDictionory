@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
-
 namespace team10_24
 {
     public partial class Form5 : Form
@@ -21,6 +20,7 @@ namespace team10_24
             InitializeComponent();
         }
 
+        // history_Click 이벤트 핸들러 - 사용자의 검색 기록을 표시하는 버튼 클릭 시 호출됩니다.
         private void history_Click(object sender, EventArgs e)
         {
             int loggedInUserId = UserSession.Instance.UserId; // 세션에서 로그인한 사용자의 UID 가져오기
