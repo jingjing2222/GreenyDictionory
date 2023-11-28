@@ -21,42 +21,41 @@ namespace team10_24
         {
             Form4 form4 = new Form4(); // Assuming Form16 is the class name for Green Book main form
             form4.Show();
-            this.Hide();
         }
 
         private void history_Click(object sender, EventArgs e)
         {
             Form5 form5 = new Form5(); // Assuming Form16 is the class name for Green Book main form
             form5.Show();
-            this.Hide();
         }
 
         private void diary_Click(object sender, EventArgs e)
         {
             Form6 form6 = new Form6(); // Assuming Form16 is the class name for Green Book main form
             form6.Show();
-            this.Hide();
         }
 
         private void community_Click(object sender, EventArgs e)
         {
             Form11 form11 = new Form11(); // Assuming Form16 is the class name for Green Book main form
             form11.Show();
-            this.Hide();
         }
 
         private void bookmark_Click(object sender, EventArgs e)
         {
             Form14 form14 = new Form14(); // Assuming Form16 is the class name for Green Book main form
             form14.Show();
-            this.Hide();
         }
 
         private void logout_Click(object sender, EventArgs e)
         {
             Form1 form1 = new Form1(); // 로그인 폼으로 돌아감
             form1.Show();
-            this.Hide();
+        }
+
+        private void Form16_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit(); // 모든 폼을 닫고 애플리케이션 종료
         }
     }
 }
