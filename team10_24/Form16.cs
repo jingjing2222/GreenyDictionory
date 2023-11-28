@@ -52,5 +52,10 @@ namespace team10_24
             Form1 form1 = new Form1(); // 로그인 폼으로 돌아감
             form1.Show();
         }
+
+        private void Form16_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit(); // 모든 폼을 닫고 애플리케이션 종료
+        }
     }
 }
