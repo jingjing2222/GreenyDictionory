@@ -51,13 +51,17 @@ namespace team10_24
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (e.RowIndex >= 0 && dataGridView1.Rows[e.RowIndex].IsNewRow == false)
             {
                 var selectedRow = dataGridView1.Rows[e.RowIndex];
                 int postId = Convert.ToInt32(selectedRow.Cells["post_id"].Value);
 
                 Form13 form13 = new Form13(postId); // Form13 생성자에 postId 전달
                 form13.Show();
+            }
+            else
+            {
+                MessageBox.Show("빈 칸 입니다.");
             }
         }
     }
