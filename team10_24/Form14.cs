@@ -11,21 +11,14 @@ using MySql.Data.MySqlClient;
 
 namespace team10_24
 {
-    public class UserSession
-    {
-        public static UserSession Instance { get; } = new UserSession();
-        public int UserId { get; set; }
-        private UserSession() { }
-    }
+   
     public partial class Form14 : Form
     {
         private string connectionString = "server=webp.flykorea.kr;user=hpjw;database=hpjwDB;port=13306;password=qwer!@!@1234;";
-        private int loggedInUserID;
 
         public Form14()
         {
             InitializeComponent();
-            loggedInUserID = userID;
             LoadBookmarkedPlants();
         }
 
@@ -38,6 +31,8 @@ namespace team10_24
 
         private void LoadBookmarkedPlants()
         {
+            int loggedInUserId = UserSession.Instance.UserId;
+
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
                 try
@@ -45,38 +40,42 @@ namespace team10_24
                     connection.Open();
 
                     // 유저의 uid를 이용해서 북마크된 식물 목록을 가져오는 쿼리
-                    string query = @"SELECT PlantTable.plant_name FROM PlantTable INNER JOIN BookMarkTable ON BookMarkTable.plant_id = Plants.plant_id WHERE BookMarkTable.uid = @UserId";
-                    MySqlCommand command = new MySqlCommand(query, connection);
-                    command.Parameters.AddWithValue("@UserID", loggedInUserID);
+                    string query = @"SELECT PlantTable.plant_name FROM PlantTable INNER JOIN BookMarkTable ON BookMarkTable.plant_id = BookMarkTable.plant_id WHERE BookMarkTable.uid = @UserId";
 
-                    using (MySqlDataReader reader = command.ExecuteReader())
+                    using (MySqlCommand cmd = new MySqlCommand(query, connection))
                     {
-                        while (reader.Read())
-                        {
-                            string plantName = reader["plant_name"].ToString();
+                        // 쿼리에 사용자의 UID를 매개변수로 전달
+                        cmd.Parameters.AddWithValue("@UserId", loggedInUserId);
+                        MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
+                        DataTable dataTable = new DataTable();
+                        adapter.Fill(dataTable);
 
-                            // DataGridView에 식물 이름 추가
-                            dataGridView1.Rows.Add(plantName);
-                        }
+                        // DataGridView에 조회된 데이터를 바인딩하여 표시
+                        dataGridView1.DataSource = dataTable;
                     }
+
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Error: " + ex.Message);
+                    MessageBox.Show("데이터베이스 연결 실패" + ex.Message);
                 }
             }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            int index = e.RowIndex;
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
-                string selectedPlantName = selectedRow.Cells["ColumnName"].Value.ToString(); // ColumnName에 식물 이름 열 이름을 넣어주세요
+                int plantId = Convert.ToInt32(dataGridView1.Rows[index].Cells["plantId"].Value);
+                string plantName = dataGridView1.Rows[index].Cells["plantName"].Value.ToString();
+                string plantColor = dataGridView1.Rows[index].Cells["plantColor"].Value.ToString();
+                string bloomSeason = dataGridView1.Rows[index].Cells["bloomSeason"].Value.ToString();
 
-                // 폼10으로 이동하는 코드
-                Form10 form10 = new Form10(); // 선택된 식물 이름을 폼10에 전달
+                // Form10으로 선택한 식물 정보를 전달하는 코드
+                Form10 form10 = new Form10(plantId, plantName, plantColor, bloomSeason);
                 form10.Show();
+                this.Hide();
             }
         }
     }

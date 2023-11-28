@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
+
 namespace team10_24
 {
     public class UserSession
@@ -22,16 +23,16 @@ namespace team10_24
     {
         public class DatabaseManager
         {
-            public int? GetUserId(string username)
+            public int? GetUserId(string id)
             {
                 string connectionString = "server=webp.flykorea.kr; user=hpjw; database=hpjwDB; port=13306; password=qwer!@!@1234;";
                 using (var connection = new MySqlConnection(connectionString))
                 {
                     connection.Open();
-                    var query = "SELECT uid FROM UserTable WHERE id = @username";
+                    var query = "SELECT uid FROM UserTable WHERE id = @id";
                     using (var command = new MySqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@username", username);
+                        command.Parameters.AddWithValue("@id", id);
                         var result = command.ExecuteScalar();
                         if (result != null)
                         {
@@ -58,6 +59,7 @@ namespace team10_24
             {
                 MessageBox.Show("로그인 성공!");
                 UserSession.Instance.UserId = userId.Value; // 사용자의 UID 저장
+                MessageBox.Show("로그인 성공! UID: " + userId.Value.ToString()); // UID 확인 메시지
                 this.Hide();
                 Form16 form16 = new Form16();
                 form16.ShowDialog();
