@@ -87,8 +87,6 @@ namespace team10_24
 
         private void back_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1(); // Create an instance of Form1
-            form1.Show(); // Show Form1
             this.Close();
         }
     }

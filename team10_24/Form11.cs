@@ -40,8 +40,6 @@ namespace team10_24
 
         private void back_Click(object sender, EventArgs e)
         {
-            Form16 form16 = new Form16(); // Create an instance of Form16
-            form16.Show(); // Show Form16
             this.Close();
         }
 
@@ -53,13 +51,17 @@ namespace team10_24
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+            if (e.RowIndex >= 0 && dataGridView1.Rows[e.RowIndex].IsNewRow == false)
             {
                 var selectedRow = dataGridView1.Rows[e.RowIndex];
                 int postId = Convert.ToInt32(selectedRow.Cells["post_id"].Value);
 
                 Form13 form13 = new Form13(postId); // Form13 생성자에 postId 전달
                 form13.Show();
+            }
+            else
+            {
+                MessageBox.Show("빈 칸 입니다.");
             }
         }
     }

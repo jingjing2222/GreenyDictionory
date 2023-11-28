@@ -11,16 +11,9 @@ using MySql.Data.MySqlClient;
 
 
 namespace team10_24
-{
-    public class UserSession
+{   public partial class Form1 : Form
     {
-        public static UserSession Instance { get; } = new UserSession();
-        public int UserId { get; set; }
-        private UserSession() { }
-    }
-
-    public partial class Form1 : Form
-    {
+        
         public class DatabaseManager
         {
             public int? GetUserId(string id)
@@ -76,6 +69,12 @@ namespace team10_24
             Form3 form3 = new Form3();
             form3.Show();
         }
+    }
+    public class UserSession
+    {
+        public static UserSession Instance { get; } = new UserSession();
+        public int UserId { get; set; }
+        private UserSession() { }
     }
 
 }
