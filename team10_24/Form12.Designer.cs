@@ -33,19 +33,20 @@ namespace team10_24
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.titleTextBox = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.contentTextBox = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.back = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(323, 29);
+            this.label1.Font = new System.Drawing.Font("굴림", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(313, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(143, 20);
+            this.label1.Size = new System.Drawing.Size(196, 28);
             this.label1.TabIndex = 0;
             this.label1.Text = "커뮤니티 작성";
             // 
@@ -76,14 +77,14 @@ namespace team10_24
             this.label3.TabIndex = 7;
             this.label3.Text = "제목";
             // 
-            // textBox1
+            // titleTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(238, 208);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox1.Size = new System.Drawing.Size(246, 45);
-            this.textBox1.TabIndex = 8;
+            this.titleTextBox.Location = new System.Drawing.Point(238, 208);
+            this.titleTextBox.Multiline = true;
+            this.titleTextBox.Name = "titleTextBox";
+            this.titleTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.titleTextBox.Size = new System.Drawing.Size(246, 45);
+            this.titleTextBox.TabIndex = 8;
             // 
             // label4
             // 
@@ -95,33 +96,45 @@ namespace team10_24
             this.label4.TabIndex = 9;
             this.label4.Text = "내용";
             // 
-            // textBox2
+            // contentTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(238, 315);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Both;
-            this.textBox2.Size = new System.Drawing.Size(335, 186);
-            this.textBox2.TabIndex = 10;
+            this.contentTextBox.Location = new System.Drawing.Point(238, 315);
+            this.contentTextBox.Multiline = true;
+            this.contentTextBox.Name = "contentTextBox";
+            this.contentTextBox.ScrollBars = System.Windows.Forms.ScrollBars.Both;
+            this.contentTextBox.Size = new System.Drawing.Size(335, 186);
+            this.contentTextBox.TabIndex = 10;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(238, 526);
+            this.button1.Location = new System.Drawing.Point(238, 533);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(98, 40);
+            this.button1.Size = new System.Drawing.Size(98, 33);
             this.button1.TabIndex = 11;
             this.button1.Text = "추가";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // back
+            // 
+            this.back.Location = new System.Drawing.Point(357, 533);
+            this.back.Name = "back";
+            this.back.Size = new System.Drawing.Size(98, 33);
+            this.back.TabIndex = 43;
+            this.back.Text = "돌아가기";
+            this.back.UseVisualStyleBackColor = true;
+            this.back.Click += new System.EventHandler(this.back_Click);
             // 
             // Form12
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 593);
+            this.Controls.Add(this.back);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.contentTextBox);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.titleTextBox);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.label2);
@@ -139,9 +152,10 @@ namespace team10_24
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox titleTextBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox contentTextBox;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button back;
     }
 }

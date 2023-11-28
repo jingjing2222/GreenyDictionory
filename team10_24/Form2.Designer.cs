@@ -66,6 +66,7 @@ namespace team10_24
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -81,9 +82,9 @@ namespace team10_24
             // 
             // Add
             // 
-            this.Add.Location = new System.Drawing.Point(41, 467);
+            this.Add.Location = new System.Drawing.Point(41, 475);
             this.Add.Name = "Add";
-            this.Add.Size = new System.Drawing.Size(116, 38);
+            this.Add.Size = new System.Drawing.Size(100, 30);
             this.Add.TabIndex = 77;
             this.Add.Text = "추가";
             this.Add.UseVisualStyleBackColor = true;
@@ -426,11 +427,22 @@ namespace team10_24
             this.label1.TabIndex = 78;
             this.label1.Text = "식물 추가";
             // 
+            // back
+            // 
+            this.back.Location = new System.Drawing.Point(184, 475);
+            this.back.Name = "back";
+            this.back.Size = new System.Drawing.Size(100, 30);
+            this.back.TabIndex = 79;
+            this.back.Text = "돌아가기";
+            this.back.UseVisualStyleBackColor = true;
+            this.back.Click += new System.EventHandler(this.back_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(767, 548);
+            this.Controls.Add(this.back);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.Add);
             this.Controls.Add(this.label9);
@@ -522,5 +534,6 @@ namespace team10_24
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button back;
     }
 }

@@ -46,5 +46,16 @@ namespace team10_24
             Form14 form14 = new Form14(); // Assuming Form16 is the class name for Green Book main form
             form14.Show();
         }
+
+        private void logout_Click(object sender, EventArgs e)
+        {
+            Form1 form1 = new Form1(); // 로그인 폼으로 돌아감
+            form1.Show();
+        }
+
+        private void Form16_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit(); // 모든 폼을 닫고 애플리케이션 종료
+        }
     }
 }

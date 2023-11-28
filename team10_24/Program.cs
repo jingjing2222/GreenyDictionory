@@ -16,7 +16,7 @@ namespace team10_24
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Application.Run(new Form1()); // 폼을 직접 전달하지 않음
         }
     }
 }

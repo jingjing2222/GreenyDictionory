@@ -32,6 +32,7 @@ namespace team10_24
             this.label1 = new System.Windows.Forms.Label();
             this.new_write = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.back = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -47,9 +48,9 @@ namespace team10_24
             // 
             // new_write
             // 
-            this.new_write.Location = new System.Drawing.Point(296, 380);
+            this.new_write.Location = new System.Drawing.Point(253, 388);
             this.new_write.Name = "new_write";
-            this.new_write.Size = new System.Drawing.Size(133, 46);
+            this.new_write.Size = new System.Drawing.Size(99, 38);
             this.new_write.TabIndex = 2;
             this.new_write.Text = "새로 작성";
             this.new_write.UseVisualStyleBackColor = true;
@@ -65,11 +66,22 @@ namespace team10_24
             this.dataGridView1.Size = new System.Drawing.Size(353, 273);
             this.dataGridView1.TabIndex = 3;
             // 
+            // back
+            // 
+            this.back.Location = new System.Drawing.Point(373, 388);
+            this.back.Name = "back";
+            this.back.Size = new System.Drawing.Size(99, 38);
+            this.back.TabIndex = 42;
+            this.back.Text = "돌아가기";
+            this.back.UseVisualStyleBackColor = true;
+            this.back.Click += new System.EventHandler(this.back_Click);
+            // 
             // Form6
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(717, 450);
+            this.Controls.Add(this.back);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.new_write);
             this.Controls.Add(this.label1);
@@ -86,5 +98,6 @@ namespace team10_24
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button new_write;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button back;
     }
 }
