@@ -49,8 +49,6 @@ namespace team10_24
 
         private void back_Click(object sender, EventArgs e)
         {
-            Form16 form16 = new Form16();
-            form16.Show();
             this.Close();
         }
     }

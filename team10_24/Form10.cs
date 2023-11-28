@@ -39,8 +39,6 @@ namespace team10_24
 
         private void back_Click(object sender, EventArgs e)
         {
-            Form8 form8 = new Form8();
-            form8.Show();
             this.Close();
         }
 
