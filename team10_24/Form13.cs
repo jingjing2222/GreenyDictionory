@@ -73,6 +73,8 @@ namespace team10_24
                         {
                             MessageBox.Show("글이 삭제되었습니다.");
                             this.Close(); // 글 삭제 후 폼을 닫음
+                            Form11 form11 = new Form11();
+                            form11.Show();
                         }
                         else
                         {
@@ -99,10 +101,15 @@ namespace team10_24
                 }
             }
             MessageBox.Show("글이 수정되었습니다.");
+            this.Close();
+            Form11 form11 = new Form11();
+            form11.Show();
         }
 
         private void back_Click(object sender, EventArgs e)
         {
+            Form11 form11 = new Form11();
+            form11.Show();
             this.Close();
         }
     }
