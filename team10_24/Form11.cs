@@ -47,6 +47,7 @@ namespace team10_24
         {
             Form12 form12 = new Form12();
             form12.Show();
+            this.Close();
         }
 
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -58,6 +59,7 @@ namespace team10_24
 
                 Form13 form13 = new Form13(postId); // Form13 생성자에 postId 전달
                 form13.Show();
+                this.Close();
             }
             else
             {

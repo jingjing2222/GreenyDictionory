@@ -40,6 +40,8 @@ namespace team10_24
         private void back_Click(object sender, EventArgs e)
         {
             this.Close();
+            Form4 form4 = new Form4();
+            form4.Show();
         }
 
         private void SetRadioColor(string colorValue)
@@ -121,8 +123,8 @@ namespace team10_24
                 {
                     MessageBox.Show("식물 데이터가 성공적으로 삭제되었습니다.");
                     this.Close(); // Form10 창을 닫음
-                    Form8 form8 = new Form8();
-                    form8.Show(); // Form8 창을 다시 열음
+                    Form4 form4 = new Form4();
+                    form4.Show();
                 }
                 else
                 {
@@ -130,5 +132,20 @@ namespace team10_24
                 }
             }
         }
+
+        private void bookmark_Click(object sender, EventArgs e)
+        {
+            int loggedInUserId = UserSession.Instance.UserId; // Get the current logged-in user's ID
+
+            if (dbManager.AddBookmark(loggedInUserId, plantId))
+            {
+                MessageBox.Show("북마크 추가에 성공했습니다.");
+            }
+            else
+            {
+                MessageBox.Show("북마크 추가에 실패했습니다.");
+            }
+        }
+
     }
 }

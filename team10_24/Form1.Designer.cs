@@ -41,6 +41,7 @@ namespace team10_24
             // Id
             // 
             this.Id.Location = new System.Drawing.Point(322, 139);
+
             this.Id.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Id.Name = "Id";
             this.Id.Size = new System.Drawing.Size(170, 25);

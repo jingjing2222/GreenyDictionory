@@ -22,6 +22,8 @@ namespace team10_24
 
         private void back_Click(object sender, EventArgs e)
         {
+            Form11 form11 = new Form11();
+            form11.Show();
             this.Close();
         }
 
@@ -52,6 +54,8 @@ namespace team10_24
                     {
                         MessageBox.Show("새 글이 추가되었습니다.");
                         this.Close(); // 글 추가 후 폼을 닫음
+                        Form11 form11 = new Form11();
+                        form11.Show();
                     }
                     else
                     {
