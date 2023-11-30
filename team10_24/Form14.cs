@@ -67,13 +67,10 @@ namespace team10_24
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                int plantId = Convert.ToInt32(row.Cells[0].Value); // Assuming plantId is the first column (index 0)
-                string plantName = row.Cells[1].Value.ToString(); // Assuming plantName is the second column (index 1)
-                string plantColor = row.Cells[2].Value.ToString(); // Assuming plantColor is the third column (index 2)
-                string bloomSeason = row.Cells[3].Value.ToString();
+                string plantName = row.Cells["plant_name"].Value.ToString();
 
                 // Form10으로 선택한 식물 정보를 전달하는 코드
-                Form10 form10 = new Form10(plantId, plantName, plantColor, bloomSeason);
+                Form10 form10 = new Form10(plantName);
                 form10.Show();
                 this.Hide();
             }
