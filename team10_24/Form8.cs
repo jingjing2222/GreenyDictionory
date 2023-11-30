@@ -17,6 +17,7 @@ namespace team10_24
         {
             InitializeComponent();
             InitializeDataGridView();
+            CustomizeDataGridView();
         }
 
         private void InitializeDataGridView()
@@ -39,6 +40,13 @@ namespace team10_24
                 dataGridView1.Rows.Add(plantData.plant_id,plantData.plant_name, plantData.plant_color, plantData.bloom_season);
             }
         }
+        private void CustomizeDataGridView()
+        {
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.Font = new Font(dataGridView1.Font.FontFamily, 10);
+            // 여기에 다른 커스터마이징 코드를 추가할 수 있습니다.
+        }
+
 
         private void Modify_Click(object sender, EventArgs e)
         {

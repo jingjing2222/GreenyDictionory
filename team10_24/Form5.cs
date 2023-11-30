@@ -18,8 +18,13 @@ namespace team10_24
         public Form5()
         {
             InitializeComponent();
+            CustomizeDataGridView();
         }
-
+        private void CustomizeDataGridView()
+        {
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.Font = new Font(dataGridView1.Font.FontFamily, 10);
+        }
         // history_Click 이벤트 핸들러 - 사용자의 검색 기록을 표시하는 버튼 클릭 시 호출됩니다.
         private void history_Click(object sender, EventArgs e)
         {
