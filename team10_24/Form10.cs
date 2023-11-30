@@ -137,13 +137,27 @@ namespace team10_24
         {
             int loggedInUserId = UserSession.Instance.UserId; // Get the current logged-in user's ID
 
-            if (dbManager.AddBookmark(loggedInUserId, plantId))
+            if (dbManager.CheckBookmarkExists(loggedInUserId, plantId))
             {
-                MessageBox.Show("북마크 추가에 성공했습니다.");
+                if (dbManager.DeleteBookmark(loggedInUserId, plantId))
+                {
+                    MessageBox.Show("북마크가 삭제되었습니다.");
+                }
+                else
+                {
+                    MessageBox.Show("북마크 삭제에 실패했습니다.");
+                }
             }
             else
             {
-                MessageBox.Show("북마크 추가에 실패했습니다.");
+                if (dbManager.AddBookmark(loggedInUserId, plantId))
+                {
+                    MessageBox.Show("북마크 추가에 성공했습니다.");
+                }
+                else
+                {
+                    MessageBox.Show("북마크 추가에 실패했습니다.");
+                }
             }
         }
 

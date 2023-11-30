@@ -20,6 +20,7 @@ namespace team10_24
         {
             InitializeComponent();
             LoadBookmarkedPlants();
+            CustomizeDataGridView();
         }
 
 
@@ -52,9 +53,14 @@ namespace team10_24
                         DataTable dataTable = new DataTable();
                         adapter.Fill(dataTable);
 
-                        // Bind the DataTable to the DataGridView
                         dataGridView1.DataSource = dataTable;
-                        // Optionally, you can set the visibility of plant_id column to false if you don't want it to be displayed
+
+                        // Set custom headers after setting the DataSource
+                        dataGridView1.Columns["plant_name"].HeaderText = "이름";
+                        dataGridView1.Columns["plant_color"].HeaderText = "꽃 색";
+                        dataGridView1.Columns["bloom_season"].HeaderText = "개화기";
+
+                        // Hide the plant_id column
                         dataGridView1.Columns["plant_id"].Visible = false;
                     }
 
@@ -64,6 +70,11 @@ namespace team10_24
                     MessageBox.Show("데이터베이스 연결 실패" + ex.Message);
                 }
             }
+        }
+        private void CustomizeDataGridView()
+        {
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.Font = new Font(dataGridView1.Font.FontFamily, 10);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

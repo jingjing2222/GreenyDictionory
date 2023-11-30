@@ -18,6 +18,7 @@ namespace team10_24
         {
             InitializeComponent();
             LoadCommunityPosts();
+            CustomizeDataGridView();
         }
 
         private void LoadCommunityPosts()
@@ -36,6 +37,11 @@ namespace team10_24
                     dataGridView1.Columns["post_id"].Visible = false;
                 }
             }
+        }
+        private void CustomizeDataGridView()
+        {
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.Font = new Font(dataGridView1.Font.FontFamily, 10);
         }
 
         private void back_Click(object sender, EventArgs e)
