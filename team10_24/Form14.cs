@@ -53,9 +53,14 @@ namespace team10_24
                         DataTable dataTable = new DataTable();
                         adapter.Fill(dataTable);
 
-                        // Bind the DataTable to the DataGridView
                         dataGridView1.DataSource = dataTable;
-                        // Optionally, you can set the visibility of plant_id column to false if you don't want it to be displayed
+
+                        // Set custom headers after setting the DataSource
+                        dataGridView1.Columns["plant_name"].HeaderText = "이름";
+                        dataGridView1.Columns["plant_color"].HeaderText = "꽃 색";
+                        dataGridView1.Columns["bloom_season"].HeaderText = "개화기";
+
+                        // Hide the plant_id column
                         dataGridView1.Columns["plant_id"].Visible = false;
                     }
 

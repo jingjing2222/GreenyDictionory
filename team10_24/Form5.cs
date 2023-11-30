@@ -63,17 +63,14 @@ namespace team10_24
                         DataTable dataTable = new DataTable();
                         adapter.Fill(dataTable);
 
-                        // Check if dataGridView1 is null
-                        if (dataGridView1 == null)
-                        {
-                            MessageBox.Show("DataGridView is not initialized.");
-                            return;
-                        }
-
                         dataGridView1.DataSource = dataTable;
-                        dataGridView1.Columns["plant_id"].Visible = false;  // Ensure this line comes after setting the DataSource
 
-                        // Assuming plant_id is the first column, you can hide it
+                        // Set custom headers after setting the DataSource
+                        dataGridView1.Columns["plant_name"].HeaderText = "이름";
+                        dataGridView1.Columns["plant_color"].HeaderText = "꽃 색";
+                        dataGridView1.Columns["bloom_season"].HeaderText = "개화기";
+
+                        // Hide the plant_id column
                         dataGridView1.Columns["plant_id"].Visible = false;
                     }
                 }
