@@ -397,6 +397,59 @@ namespace team10_24
             }
         }
 
+        public bool CheckBookmarkExists(int userId, int plantId)
+        {
+            try
+            {
+                string query = "SELECT COUNT(*) FROM BookMarkTable WHERE uid = @userId AND plant_id = @plantId";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                cmd.Parameters.AddWithValue("@userId", userId);
+                cmd.Parameters.AddWithValue("@plantId", plantId);
+
+                connection.Open();
+                int exists = Convert.ToInt32(cmd.ExecuteScalar());
+
+                return exists > 0; // Returns true if the bookmark exists
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in CheckBookmarkExists: " + ex.Message);
+                return false; // Returns false if there was an error
+            }
+            finally
+            {
+                connection.Close(); // Always close the connection
+            }
+        }
+
+        public bool DeleteBookmark(int userId, int plantId)
+        {
+            try
+            {
+                string query = "DELETE FROM BookMarkTable WHERE uid = @userId AND plant_id = @plantId";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                cmd.Parameters.AddWithValue("@userId", userId);
+                cmd.Parameters.AddWithValue("@plantId", plantId);
+
+                connection.Open();
+                int result = cmd.ExecuteNonQuery();
+
+                return result > 0; // Returns true if the deletion was successful
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in DeleteBookmark: " + ex.Message);
+                return false; // Returns false if there was an error
+            }
+            finally
+            {
+                connection.Close(); // Always close the connection
+            }
+        }
+
+
 
 
 
