@@ -161,6 +161,11 @@ namespace team10_24
             }
         }
 
-
+        private void review_Click(object sender, EventArgs e)
+        {
+            Form15 form15 = new Form15();
+            form15.Show();
+            this.Hide();
+        }
     }
 }

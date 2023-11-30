@@ -20,6 +20,7 @@ namespace team10_24
         {
             InitializeComponent();
             LoadBookmarkedPlants();
+            CustomizeDataGridView();
         }
 
 
@@ -69,6 +70,11 @@ namespace team10_24
                     MessageBox.Show("데이터베이스 연결 실패" + ex.Message);
                 }
             }
+        }
+        private void CustomizeDataGridView()
+        {
+            dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridView1.Font = new Font(dataGridView1.Font.FontFamily, 10);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

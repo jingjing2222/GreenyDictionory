@@ -43,6 +43,7 @@ namespace team10_24
         {
             InitializeComponent();
             dbManager = new DatabaseManager();
+            PW.PasswordChar = '*';
         }
 
         private void Login_Click(object sender, EventArgs e)
