@@ -31,17 +31,33 @@ namespace team10_24
 
         private void Modify_Click(object sender, EventArgs e)
         {
-            // Logic to modify the diary entry
+            string updatedDiaryEntry = textBox1.Text; // Assuming textBox1 contains the diary entry
+
+            if (dbManager.UpdateDiaryEntry(diaryId, updatedDiaryEntry))
+            {
+                MessageBox.Show("수정 성공");
+            }
+            else
+            {
+                MessageBox.Show("수정 실패");
+            }
         }
 
         private void Delete_Click(object sender, EventArgs e)
         {
-            // Logic to delete the diary entry
-        }
-
-        private void Okay_Click(object sender, EventArgs e)
-        {
-            // Logic for okay action, if needed
+            DialogResult confirmResult = MessageBox.Show("삭제하시겠습니까?", "Confirm Delete", MessageBoxButtons.YesNo);
+            if (confirmResult == DialogResult.Yes)
+            {
+                if (dbManager.DeleteDiaryEntry(diaryId))
+                {
+                    MessageBox.Show("삭제 성공");
+                    this.Close(); // Optionally close the form after deletion
+                }
+                else
+                {
+                    MessageBox.Show("삭제 실패");
+                }
+            }
         }
 
         private void back_Click(object sender, EventArgs e)

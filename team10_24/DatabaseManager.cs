@@ -558,7 +558,56 @@ namespace team10_24
 
             return entry;
         }
+        public bool UpdateDiaryEntry(int diaryId, string newEntry)
+        {
+            try
+            {
+                string query = "UPDATE DiaryTable SET diary_entry = @newEntry WHERE diary_id = @diaryId";
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@diaryId", diaryId);
+                    cmd.Parameters.AddWithValue("@newEntry", newEntry);
 
+                    connection.Open();
+                    int result = cmd.ExecuteNonQuery();
+                    return result > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in UpdateDiaryEntry: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public bool DeleteDiaryEntry(int diaryId)
+        {
+            try
+            {
+                string query = "DELETE FROM DiaryTable WHERE diary_id = @diaryId";
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@diaryId", diaryId);
+
+                    connection.Open();
+                    int result = cmd.ExecuteNonQuery();
+                    return result > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in DeleteDiaryEntry: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
 
 
     }

@@ -30,8 +30,10 @@ namespace team10_24
             if (dataGridView1.Columns.Count == 0)
             {
                 dataGridView1.Columns.Add("DiaryId", "Diary ID");
-                dataGridView1.Columns.Add("DiaryDate", "Diary Date");
+                dataGridView1.Columns.Add("DiaryDate", "날짜");
+
                 dataGridView1.Columns["DiaryId"].Visible = false; // Hide the Diary ID column
+                dataGridView1.Columns["DiaryDate"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; // Fill the grid with Diary Date
             }
 
             List<DatabaseManager.DiaryEntry> diaryEntries = dbManager.GetDiaryEntriesForUser(loggedInUserId);
