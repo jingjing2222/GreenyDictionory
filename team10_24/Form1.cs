@@ -50,9 +50,7 @@ namespace team10_24
             int? userId = dbManager.GetUserId(Id.Text);
             if (userId.HasValue)
             {
-                MessageBox.Show("로그인 성공!");
                 UserSession.Instance.UserId = userId.Value; // 사용자의 UID 저장
-                MessageBox.Show("로그인 성공! UID: " + userId.Value.ToString()); // UID 확인 메시지
                 this.Hide();
                 Form16 form16 = new Form16();
                 form16.ShowDialog();
