@@ -370,6 +370,33 @@ namespace team10_24
                 connection.Close(); // Always close the connection
             }
         }
+        public bool AddSearchHistory(int userId, int plantId, DateTime searchDate)
+        {
+            try
+            {
+                string query = "INSERT INTO SearchHistoryTable (uid, plant_id, search_date) VALUES (@userId, @plantId, @searchDate)";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
+
+                cmd.Parameters.AddWithValue("@userId", userId);
+                cmd.Parameters.AddWithValue("@plantId", plantId);
+                cmd.Parameters.AddWithValue("@searchDate", searchDate);
+
+                connection.Open();
+                int result = cmd.ExecuteNonQuery();
+
+                return result > 0;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in AddSearchHistory: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
 
 
 
