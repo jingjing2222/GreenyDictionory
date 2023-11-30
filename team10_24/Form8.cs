@@ -88,11 +88,15 @@ namespace team10_24
             int index = e.RowIndex;
             if (index >= 0)
             {
+                int loggedInUserId = UserSession.Instance.UserId; // Get the logged-in user's ID
                 // DataGridView에서 식물 ID 얻기
                 int plantId = Convert.ToInt32(dataGridView1.Rows[index].Cells["plantId"].Value);
                 string plantName = dataGridView1.Rows[index].Cells["plantName"].Value.ToString();
                 string plantColor = dataGridView1.Rows[index].Cells["plantColor"].Value.ToString();
                 string bloomSeason = dataGridView1.Rows[index].Cells["bloomSeason"].Value.ToString();
+
+                // Add the search history record
+                dbManager.AddSearchHistory(loggedInUserId, plantId, DateTime.Now);
 
                 // Form10에 식물 ID 및 기타 정보 전달
                 Form10 form10 = new Form10(plantId, plantName, plantColor, bloomSeason);
@@ -101,7 +105,9 @@ namespace team10_24
             }
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
-
+        }
     }
 }
