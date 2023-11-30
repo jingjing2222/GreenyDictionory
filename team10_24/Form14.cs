@@ -38,19 +38,24 @@ namespace team10_24
                 {
                     connection.Open();
 
-                    // 유저의 uid를 이용해서 북마크된 식물 목록을 가져오는 쿼리
-                    string query = @"SELECT PlantTable.plant_name FROM PlantTable INNER JOIN BookMarkTable ON PlantTable.plant_id = BookMarkTable.plant_id WHERE BookMarkTable.uid = @UserId";
+                    // Updated query to include all necessary columns
+                    string query = @"
+                SELECT PlantTable.plant_id, PlantTable.plant_name, PlantTable.plant_color, PlantTable.bloom_season 
+                FROM PlantTable 
+                INNER JOIN BookMarkTable ON PlantTable.plant_id = BookMarkTable.plant_id 
+                WHERE BookMarkTable.uid = @UserId";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, connection))
                     {
-                        // 쿼리에 사용자의 UID를 매개변수로 전달
                         cmd.Parameters.AddWithValue("@UserId", loggedInUserId);
                         MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
                         DataTable dataTable = new DataTable();
                         adapter.Fill(dataTable);
 
-                        // DataGridView에 조회된 데이터를 바인딩하여 표시
+                        // Bind the DataTable to the DataGridView
                         dataGridView1.DataSource = dataTable;
+                        // Optionally, you can set the visibility of plant_id column to false if you don't want it to be displayed
+                        dataGridView1.Columns["plant_id"].Visible = false;
                     }
 
                 }
@@ -64,20 +69,20 @@ namespace team10_24
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             int index = e.RowIndex;
-            if (e.RowIndex >= 0)
+            if (index >= 0 && dataGridView1.Rows[index].Cells["plant_id"] != null)
             {
-                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
-                int plantId = Convert.ToInt32(row.Cells[0].Value); // Assuming plantId is the first column (index 0)
-                string plantName = row.Cells[1].Value.ToString(); // Assuming plantName is the second column (index 1)
-                string plantColor = row.Cells[2].Value.ToString(); // Assuming plantColor is the third column (index 2)
-                string bloomSeason = row.Cells[3].Value.ToString();
+                // Fetch the data from the clicked row's cells
+                int plantId = Convert.ToInt32(dataGridView1.Rows[index].Cells["plant_id"].Value);
+                string plantName = dataGridView1.Rows[index].Cells["plant_name"].Value.ToString();
+                string plantColor = dataGridView1.Rows[index].Cells["plant_color"].Value.ToString();
+                string bloomSeason = dataGridView1.Rows[index].Cells["bloom_season"].Value.ToString();
 
-                // Form10으로 선택한 식물 정보를 전달하는 코드
                 Form10 form10 = new Form10(plantId, plantName, plantColor, bloomSeason);
                 form10.Show();
                 this.Hide();
             }
         }
+
     }
 }
 
