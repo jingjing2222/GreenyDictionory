@@ -15,12 +15,13 @@ namespace team10_24
     public partial class Form14 : Form
     {
         private string connectionString = "server=webp.flykorea.kr;user=hpjw;database=hpjwDB;port=13306;password=qwer!@!@1234;";
-
+        
         public Form14()
         {
             InitializeComponent();
             LoadBookmarkedPlants();
         }
+
 
         private void back_Click(object sender, EventArgs e)
         {
@@ -38,7 +39,7 @@ namespace team10_24
                     connection.Open();
 
                     // 유저의 uid를 이용해서 북마크된 식물 목록을 가져오는 쿼리
-                    string query = @"SELECT PlantTable.plant_name FROM PlantTable INNER JOIN BookMarkTable ON BookMarkTable.plant_id = BookMarkTable.plant_id WHERE BookMarkTable.uid = @UserId";
+                    string query = @"SELECT PlantTable.plant_name FROM PlantTable INNER JOIN BookMarkTable ON PlantTable.plant_id = BookMarkTable.plant_id WHERE BookMarkTable.uid = @UserId";
 
                     using (MySqlCommand cmd = new MySqlCommand(query, connection))
                     {
@@ -65,10 +66,11 @@ namespace team10_24
             int index = e.RowIndex;
             if (e.RowIndex >= 0)
             {
-                int plantId = Convert.ToInt32(dataGridView1.Rows[index].Cells["plantId"].Value);
-                string plantName = dataGridView1.Rows[index].Cells["plantName"].Value.ToString();
-                string plantColor = dataGridView1.Rows[index].Cells["plantColor"].Value.ToString();
-                string bloomSeason = dataGridView1.Rows[index].Cells["bloomSeason"].Value.ToString();
+                DataGridViewRow row = dataGridView1.Rows[e.RowIndex];
+                int plantId = Convert.ToInt32(row.Cells[0].Value); // Assuming plantId is the first column (index 0)
+                string plantName = row.Cells[1].Value.ToString(); // Assuming plantName is the second column (index 1)
+                string plantColor = row.Cells[2].Value.ToString(); // Assuming plantColor is the third column (index 2)
+                string bloomSeason = row.Cells[3].Value.ToString();
 
                 // Form10으로 선택한 식물 정보를 전달하는 코드
                 Form10 form10 = new Form10(plantId, plantName, plantColor, bloomSeason);

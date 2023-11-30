@@ -40,6 +40,8 @@ namespace team10_24
         private void back_Click(object sender, EventArgs e)
         {
             this.Close();
+            Form4 form4 = new Form4();
+            form4.Show();
         }
 
         private void SetRadioColor(string colorValue)
@@ -121,8 +123,8 @@ namespace team10_24
                 {
                     MessageBox.Show("식물 데이터가 성공적으로 삭제되었습니다.");
                     this.Close(); // Form10 창을 닫음
-                    Form8 form8 = new Form8();
-                    form8.Show(); // Form8 창을 다시 열음
+                    Form4 form4 = new Form4();
+                    form4.Show();
                 }
                 else
                 {

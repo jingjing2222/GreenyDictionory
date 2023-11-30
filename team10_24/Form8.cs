@@ -63,6 +63,8 @@ namespace team10_24
         private void back_Click(object sender, EventArgs e)
         {
             this.Close();
+            Form4 form4 = new Form4();
+            form4.Show();
         }
         public void SetSearchCriteria(string plantName, string colorValue, string seasonValue)
         {
