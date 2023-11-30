@@ -330,5 +330,48 @@ namespace team10_24
                 connection.Close();
             }
         }
+        public bool AddBookmark(int userId, int plantId)
+        {
+            try
+            {
+                // First, check if the bookmark already exists
+                string checkQuery = "SELECT COUNT(*) FROM BookMarkTable WHERE uid = @userId AND plant_id = @plantId";
+                MySqlCommand checkCmd = new MySqlCommand(checkQuery, connection);
+
+                checkCmd.Parameters.AddWithValue("@userId", userId);
+                checkCmd.Parameters.AddWithValue("@plantId", plantId);
+
+                connection.Open();
+                int exists = Convert.ToInt32(checkCmd.ExecuteScalar());
+                if (exists > 0)
+                {
+                    // If the bookmark already exists, return false
+                    return false;
+                }
+
+                // If the bookmark does not exist, proceed to insert it
+                string insertQuery = "INSERT INTO BookMarkTable (uid, plant_id) VALUES (@userId, @plantId)";
+                MySqlCommand insertCmd = new MySqlCommand(insertQuery, connection);
+
+                insertCmd.Parameters.AddWithValue("@userId", userId);
+                insertCmd.Parameters.AddWithValue("@plantId", plantId);
+
+                int result = insertCmd.ExecuteNonQuery(); // Executes the insert query
+
+                return result > 0; // Returns true if the record was inserted successfully
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in AddBookmark: " + ex.Message);
+                return false; // Returns false if there was an error
+            }
+            finally
+            {
+                connection.Close(); // Always close the connection
+            }
+        }
+
+
+
     }
 }

@@ -132,5 +132,20 @@ namespace team10_24
                 }
             }
         }
+
+        private void bookmark_Click(object sender, EventArgs e)
+        {
+            int loggedInUserId = UserSession.Instance.UserId; // Get the current logged-in user's ID
+
+            if (dbManager.AddBookmark(loggedInUserId, plantId))
+            {
+                MessageBox.Show("북마크 추가에 성공했습니다.");
+            }
+            else
+            {
+                MessageBox.Show("북마크 추가에 실패했습니다.");
+            }
+        }
+
     }
 }

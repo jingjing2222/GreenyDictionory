@@ -328,6 +328,7 @@ namespace team10_24
             this.bookmark.Size = new System.Drawing.Size(54, 50);
             this.bookmark.TabIndex = 118;
             this.bookmark.UseVisualStyleBackColor = false;
+            this.bookmark.Click += new System.EventHandler(this.bookmark_Click);
             // 
             // back
             // 
