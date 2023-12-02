@@ -10,28 +10,30 @@ namespace team10_24
         private int userId;
         private int diaryId;
 
+        // Form7의 생성자
         public Form7(int userId, int diaryId)
         {
             InitializeComponent();
-            dbManager = new DatabaseManager(); // Initialize DatabaseManager
+            dbManager = new DatabaseManager(); // DatabaseManager 초기화
             this.userId = userId;
             this.diaryId = diaryId;
-            LoadDiaryEntry();
+            LoadDiaryEntry(); // 일기 항목 로드 메서드 호출
         }
 
+        // 일기 항목을 로드하는 메서드
         private void LoadDiaryEntry()
         {
             DatabaseManager.DiaryEntry entry = dbManager.GetDiaryEntry(this.userId, this.diaryId);
             if (entry != null)
             {
-                // Assuming you have a TextBox named diaryTextBox for displaying diary entry
                 textBox1.Text = entry.DiaryText;
             }
         }
 
+        // 수정 버튼 클릭 이벤트 핸들러
         private void Modify_Click(object sender, EventArgs e)
         {
-            string updatedDiaryEntry = textBox1.Text; // Assuming textBox1 contains the diary entry
+            string updatedDiaryEntry = textBox1.Text;
 
             if (dbManager.UpdateDiaryEntry(diaryId, updatedDiaryEntry))
             {
@@ -43,6 +45,7 @@ namespace team10_24
             }
         }
 
+        // 삭제 버튼 클릭 이벤트 핸들러
         private void Delete_Click(object sender, EventArgs e)
         {
             DialogResult confirmResult = MessageBox.Show("삭제하시겠습니까?", "Confirm Delete", MessageBoxButtons.YesNo);
@@ -51,7 +54,7 @@ namespace team10_24
                 if (dbManager.DeleteDiaryEntry(diaryId))
                 {
                     MessageBox.Show("삭제 성공");
-                    this.Close(); // Optionally close the form after deletion
+                    this.Close(); // 선택적으로 삭제 후 폼을 닫음
                 }
                 else
                 {
@@ -60,9 +63,10 @@ namespace team10_24
             }
         }
 
+        // 돌아 가기 버튼 클릭 이벤트 핸들러
         private void back_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close(); // 현재 폼을 닫음
         }
     }
 }

@@ -15,25 +15,27 @@ namespace team10_24
     {
         private DatabaseManager dbManager;
 
+        // Form6의 생성자
         public Form6()
         {
             InitializeComponent();
             dbManager = new DatabaseManager();
-            LoadDiaryEntries(); // Call the method to load diary entries
+            LoadDiaryEntries(); // 일기 항목 로드 메서드 호출
         }
 
+        // 일기 항목을 로드하는 메서드
         private void LoadDiaryEntries()
         {
             int loggedInUserId = UserSession.Instance.UserId;
 
-            // Define columns if they are not already defined
+            // 일기장 목록에 컬럼이 정의되어 있지 않은 경우 정의
             if (dataGridView1.Columns.Count == 0)
             {
                 dataGridView1.Columns.Add("DiaryId", "Diary ID");
                 dataGridView1.Columns.Add("DiaryDate", "날짜");
 
-                dataGridView1.Columns["DiaryId"].Visible = false; // Hide the Diary ID column
-                dataGridView1.Columns["DiaryDate"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; // Fill the grid with Diary Date
+                dataGridView1.Columns["DiaryId"].Visible = false; // Diary ID 컬럼 숨김
+                dataGridView1.Columns["DiaryDate"].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill; // 날짜 컬럼으로 그리드 채움
             }
 
             List<DatabaseManager.DiaryEntry> diaryEntries = dbManager.GetDiaryEntriesForUser(loggedInUserId);
@@ -43,28 +45,29 @@ namespace team10_24
             }
         }
 
-
-
+        // 새로 작성 버튼 클릭 이벤트 핸들러
         private void new_write_Click(object sender, EventArgs e)
         {
-            Form9 form9 = new Form9(); // Assuming Form16 is the class name for Green Book main form
+            Form9 form9 = new Form9(); // 새 일기 작성 폼을 표시
             form9.Show();
         }
 
+        // 뒤로 가기 버튼 클릭 이벤트 핸들러
         private void back_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close(); // 현재 폼을 닫음
         }
 
+        // 일기장 목록 셀 더블 클릭 이벤트 핸들러
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int index = e.RowIndex;
             if (index >= 0)
             {
-                int diaryId = Convert.ToInt32(dataGridView1.Rows[index].Cells["DiaryId"].Value); // Get diary_id from hidden column
+                int diaryId = Convert.ToInt32(dataGridView1.Rows[index].Cells["DiaryId"].Value); // 숨겨진 컬럼에서 diary_id 추출
                 int loggedInUserId = UserSession.Instance.UserId;
 
-                Form7 form7 = new Form7(loggedInUserId, diaryId);
+                Form7 form7 = new Form7(loggedInUserId, diaryId); // 해당 일기의 세부 정보를 표시하는 폼 표시
                 form7.Show();
             }
         }
