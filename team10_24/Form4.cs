@@ -102,11 +102,14 @@ namespace team10_24
 
         private void Search_Click(object sender, EventArgs e)
         {
+            // 검색 필드에서 식물 이름을 가져옴
             string plantName = name_search.Text;
+
+            // 색상과 계절에 대한 선택된 라디오 버튼의 값을 가져옴
             string selectedColor = GetSelectedRadioButtonValue(groupBoxColors);
             string selectedSeason = GetSelectedRadioButtonValue(groupBoxSeasons);
 
-            // 선택된 색상과 계절의 실제 값(한국어)을 가져옵니다.
+            // 선택된 색상과 계절의 실제 값(한국어)을 데이터베이스 매핑을 통해 가져옴
             string colorValue = null;
             string seasonValue = null;
 
@@ -120,14 +123,14 @@ namespace team10_24
                 seasonValue = DatabaseManager.seasonMapping[selectedSeason];
             }
 
+            // 검색 조건을 설정하여 새 폼(Form8)을 표시
             Form8 form8 = new Form8();
             form8.SetSearchCriteria(plantName, colorValue, seasonValue);
             form8.Show();
+
+            // 현재 폼을 닫음
             this.Close();
         }
-
-
-
 
         // 그룹박스 내에서 선택된 라디오 버튼의 값을 반환하는 메서드
         private string GetSelectedRadioButtonValue(GroupBox groupBox)
@@ -143,21 +146,23 @@ namespace team10_24
             return null; // 선택된 RadioButton이 없는 경우
         }
 
-
         private void groupBoxColors_Enter(object sender, EventArgs e)
         {
-
+            // 이 메서드는 현재 비어 있음
         }
 
         private void Add_Click(object sender, EventArgs e)
         {
+            // 추가 필드에서 식물 이름과 선택된 색상 및 계절의 값을 가져옴
             string plantName = name_search.Text;
             string selectedColor = GetSelectedRadioButtonValue(groupBoxColors);
             string selectedSeason = GetSelectedRadioButtonValue(groupBoxSeasons);
 
+            // 색상과 계절 값에 대한 데이터베이스 매핑을 통해 실제 값을 가져옴
             string colorValue = selectedColor != null ? DatabaseManager.colorMapping[selectedColor] : null;
             string seasonValue = selectedSeason != null ? DatabaseManager.seasonMapping[selectedSeason] : null;
 
+            // 식물 이름, 색상, 계절 값이 모두 제공된 경우에만 처리
             if (!string.IsNullOrEmpty(plantName) && colorValue != null && seasonValue != null)
             {
                 DatabaseManager dbManager = new DatabaseManager();
@@ -182,6 +187,5 @@ namespace team10_24
                 MessageBox.Show("모든 필드를 올바르게 채워주세요.");
             }
         }
-
     }
 }
