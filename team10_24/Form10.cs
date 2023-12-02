@@ -228,9 +228,6 @@ namespace team10_24
             }
         }
 
-        private void PlantImage_Click(object sender, EventArgs e)
-        {
-            
-        }
+
     }
 }

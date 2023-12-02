@@ -448,9 +448,166 @@ namespace team10_24
                 connection.Close(); // Always close the connection
             }
         }
+        // In the DatabaseManager class
+        public bool AddDiaryEntry(int userId, string diaryDate, string diaryEntry)
+        {
+            try
+            {
+                string query = "INSERT INTO DiaryTable (uid, diary_date, diary_entry) VALUES (@userId, @diaryDate, @diaryEntry)";
+                MySqlCommand cmd = new MySqlCommand(query, connection);
 
+                cmd.Parameters.AddWithValue("@userId", userId);
+                cmd.Parameters.AddWithValue("@diaryDate", diaryDate);
+                cmd.Parameters.AddWithValue("@diaryEntry", diaryEntry);
 
+                connection.Open();
+                int result = cmd.ExecuteNonQuery();
 
+                return result > 0; // True if the insert is successful
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in AddDiaryEntry: " + ex.Message);
+                return false; // False if there was an error
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+        public class DiaryEntry
+        {
+            public int DiaryId { get; set; }
+            public string DiaryDate { get; set; }
+            public string DiaryText { get; set; }
+        }
+
+        public List<DiaryEntry> GetDiaryEntriesForUser(int userId)
+        {
+            List<DiaryEntry> entries = new List<DiaryEntry>();
+            string query = "SELECT diary_id, diary_date, diary_entry FROM DiaryTable WHERE uid = @UserId ORDER BY diary_date DESC";
+
+            try
+            {
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@UserId", userId);
+                    connection.Open();
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            entries.Add(new DiaryEntry
+                            {
+                                DiaryId = reader.GetInt32("diary_id"),
+                                DiaryDate = reader.GetString("diary_date"),
+                                DiaryText = reader.GetString("diary_entry")
+                            });
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in GetDiaryEntriesForUser: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return entries;
+        }
+
+        public DiaryEntry GetDiaryEntry(int userId, int diaryId)
+        {
+            DiaryEntry entry = null;
+            string query = "SELECT diary_id, diary_date, diary_entry FROM DiaryTable WHERE uid = @UserId AND diary_id = @DiaryId";
+
+            try
+            {
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@UserId", userId);
+                    cmd.Parameters.AddWithValue("@DiaryId", diaryId);
+                    connection.Open();
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            entry = new DiaryEntry
+                            {
+                                DiaryId = reader.GetInt32("diary_id"),
+                                DiaryDate = reader.GetString("diary_date"),
+                                DiaryText = reader.GetString("diary_entry")
+                            };
+                        }
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in GetDiaryEntry: " + ex.Message);
+            }
+            finally
+            {
+                connection.Close();
+            }
+
+            return entry;
+        }
+        public bool UpdateDiaryEntry(int diaryId, string newEntry)
+        {
+            try
+            {
+                string query = "UPDATE DiaryTable SET diary_entry = @newEntry WHERE diary_id = @diaryId";
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@diaryId", diaryId);
+                    cmd.Parameters.AddWithValue("@newEntry", newEntry);
+
+                    connection.Open();
+                    int result = cmd.ExecuteNonQuery();
+                    return result > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in UpdateDiaryEntry: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
+
+        public bool DeleteDiaryEntry(int diaryId)
+        {
+            try
+            {
+                string query = "DELETE FROM DiaryTable WHERE diary_id = @diaryId";
+                using (MySqlCommand cmd = new MySqlCommand(query, connection))
+                {
+                    cmd.Parameters.AddWithValue("@diaryId", diaryId);
+
+                    connection.Open();
+                    int result = cmd.ExecuteNonQuery();
+                    return result > 0;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error in DeleteDiaryEntry: " + ex.Message);
+                return false;
+            }
+            finally
+            {
+                connection.Close();
+            }
+        }
 
 
     }

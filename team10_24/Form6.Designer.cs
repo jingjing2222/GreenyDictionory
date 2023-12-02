@@ -40,17 +40,18 @@ namespace team10_24
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(292, 39);
+            this.label1.Location = new System.Drawing.Point(256, 31);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(144, 24);
+            this.label1.Size = new System.Drawing.Size(116, 19);
             this.label1.TabIndex = 0;
             this.label1.Text = "식물 일기장";
             // 
             // new_write
             // 
-            this.new_write.Location = new System.Drawing.Point(253, 388);
+            this.new_write.Location = new System.Drawing.Point(221, 310);
+            this.new_write.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.new_write.Name = "new_write";
-            this.new_write.Size = new System.Drawing.Size(99, 38);
+            this.new_write.Size = new System.Drawing.Size(87, 30);
             this.new_write.TabIndex = 2;
             this.new_write.Text = "새로 작성";
             this.new_write.UseVisualStyleBackColor = true;
@@ -59,18 +60,21 @@ namespace team10_24
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(187, 91);
+            this.dataGridView1.Location = new System.Drawing.Point(164, 73);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 27;
-            this.dataGridView1.Size = new System.Drawing.Size(353, 273);
+            this.dataGridView1.Size = new System.Drawing.Size(309, 218);
             this.dataGridView1.TabIndex = 3;
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // back
             // 
-            this.back.Location = new System.Drawing.Point(373, 388);
+            this.back.Location = new System.Drawing.Point(326, 310);
+            this.back.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.back.Name = "back";
-            this.back.Size = new System.Drawing.Size(99, 38);
+            this.back.Size = new System.Drawing.Size(87, 30);
             this.back.TabIndex = 42;
             this.back.Text = "돌아가기";
             this.back.UseVisualStyleBackColor = true;
@@ -78,13 +82,14 @@ namespace team10_24
             // 
             // Form6
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(717, 450);
+            this.ClientSize = new System.Drawing.Size(627, 360);
             this.Controls.Add(this.back);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.new_write);
             this.Controls.Add(this.label1);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form6";
             this.Text = "Form6";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
