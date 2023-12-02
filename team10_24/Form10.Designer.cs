@@ -297,7 +297,6 @@ namespace team10_24
             this.review.TabIndex = 117;
             this.review.Text = "리뷰";
             this.review.UseVisualStyleBackColor = true;
-            this.review.Click += new System.EventHandler(this.review_Click);
             // 
             // Delete
             // 
@@ -325,7 +324,7 @@ namespace team10_24
             // 
             this.bookmark.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.bookmark.Image = ((System.Drawing.Image)(resources.GetObject("bookmark.Image")));
-            this.bookmark.Location = new System.Drawing.Point(726, 12);
+            this.bookmark.Location = new System.Drawing.Point(726, 15);
             this.bookmark.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bookmark.Name = "bookmark";
             this.bookmark.Size = new System.Drawing.Size(62, 62);
@@ -546,19 +545,19 @@ namespace team10_24
             // 
             // PlantImage
             // 
-            this.PlantImage.Location = new System.Drawing.Point(362, 55);
+            this.PlantImage.Location = new System.Drawing.Point(426, 55);
             this.PlantImage.Name = "PlantImage";
             this.PlantImage.Size = new System.Drawing.Size(195, 102);
             this.PlantImage.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.PlantImage.TabIndex = 122;
             this.PlantImage.TabStop = false;
-            this.PlantImage.Click += new System.EventHandler(this.PlantImage_Click);
             // 
             // Form10
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(700, 432);
+            this.ClientSize = new System.Drawing.Size(800, 537);
+            this.Controls.Add(this.PlantImage);
             this.Controls.Add(this.back);
             this.Controls.Add(this.bookmark);
             this.Controls.Add(this.review);
