@@ -31,8 +31,12 @@ namespace team10_24
             using (var conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                // 커뮤니티 테이블에서 post_id와 title을 선택하는 쿼리
-                var query = "SELECT post_id, title FROM CommunityTable";
+                // CommunityTable과 UserTable을 조인하여 post_id, title, username을 선택하는 쿼리
+                var query = @"
+            SELECT c.post_id, c.title, u.username 
+            FROM CommunityTable c
+            JOIN UserTable u ON c.uid = u.uid";
+
                 using (var cmd = new MySqlCommand(query, conn))
                 {
                     MySqlDataAdapter adapter = new MySqlDataAdapter(cmd);
