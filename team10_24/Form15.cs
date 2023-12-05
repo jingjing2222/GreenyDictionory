@@ -50,7 +50,7 @@ namespace team10_24
             if (!string.IsNullOrEmpty(reviewText))
             {
                 DatabaseManager dbManager = new DatabaseManager();
-                int loggedInUserId = UserSession.Instance.UserId; // Assuming you have a UserSession class
+                int loggedInUserId = UserSession.Instance.UserId; // UserSession class가 있다고 가정
 
                 if (dbManager.AddReview(loggedInUserId, this.plantId, reviewText)) // plantId 추가
                 {

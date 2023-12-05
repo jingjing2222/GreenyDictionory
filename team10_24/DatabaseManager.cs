@@ -32,6 +32,7 @@ namespace team10_24
             public string plant_color { get; set; }
         }
 
+        // 데이터베이스 연결
         public void Connect()
         {
             try
@@ -44,6 +45,8 @@ namespace team10_24
                 Console.WriteLine("연결 오류: " + ex.Message);
             }
         }
+
+        //데이터베이스 연결 종료
         public void Disconnect()
         {
             try
@@ -177,7 +180,7 @@ namespace team10_24
             string query = "SELECT * FROM PlantTable WHERE 1=1";
             List<MySqlParameter> parameters = new List<MySqlParameter>();
 
-            if (!string.IsNullOrEmpty(plantName))
+            if (!string.IsNullOrEmpty(plantName))   
             {
                 query += " AND plant_name LIKE @plantName";
                 parameters.Add(new MySqlParameter("@plantName", $"%{plantName}%"));
@@ -228,6 +231,7 @@ namespace team10_24
             return plants;
         }
 
+        //식물 데이터 업데이트
         public bool UpdatePlantData(int plantId, string newName, string newColor, string newSeason)
         {
             try
@@ -257,6 +261,8 @@ namespace team10_24
                 connection.Close();
             }
         }
+
+        // 식물 이름, 색상, 개화기를 기준으로 데이터베이스에 존재하는지 확인
         public bool CheckIfPlantExists(string plantName, string plantColor, string bloomSeason)
         {
             string query = "SELECT COUNT(*) FROM PlantTable WHERE plant_name = @plantName AND plant_color = @plantColor AND bloom_season = @bloomSeason";
@@ -283,6 +289,8 @@ namespace team10_24
                 connection.Close();
             }
         }
+
+        // 식물 데이터 삭제
         public bool DeletePlantData(int plantId)
         {
             try
@@ -305,6 +313,8 @@ namespace team10_24
                 connection.Close();
             }
         }
+
+        // 식물 데이터 추가
         public bool AddPlantData(string plantName, string plantColor, string bloomSeason)
         {
             try
@@ -330,11 +340,13 @@ namespace team10_24
                 connection.Close();
             }
         }
+
+        // 북마크 추가
         public bool AddBookmark(int userId, int plantId)
         {
             try
             {
-                // First, check if the bookmark already exists
+                // 북마크가 이미 존재하는지 확인
                 string checkQuery = "SELECT COUNT(*) FROM BookMarkTable WHERE uid = @userId AND plant_id = @plantId";
                 MySqlCommand checkCmd = new MySqlCommand(checkQuery, connection);
 
@@ -345,31 +357,32 @@ namespace team10_24
                 int exists = Convert.ToInt32(checkCmd.ExecuteScalar());
                 if (exists > 0)
                 {
-                    // If the bookmark already exists, return false
+                    // 북마크가 존재하는 경우 false 반환
                     return false;
                 }
 
-                // If the bookmark does not exist, proceed to insert it
+                // 북마크가 존재하지 않으면 계속 삽입
                 string insertQuery = "INSERT INTO BookMarkTable (uid, plant_id) VALUES (@userId, @plantId)";
                 MySqlCommand insertCmd = new MySqlCommand(insertQuery, connection);
 
                 insertCmd.Parameters.AddWithValue("@userId", userId);
                 insertCmd.Parameters.AddWithValue("@plantId", plantId);
 
-                int result = insertCmd.ExecuteNonQuery(); // Executes the insert query
-
-                return result > 0; // Returns true if the record was inserted successfully
+                int result = insertCmd.ExecuteNonQuery(); // 삽입 쿼리문 실행
+                return result > 0; // 성공적으로 삽입되면 true를 반환
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error in AddBookmark: " + ex.Message);
-                return false; // Returns false if there was an error
+                return false; // 오류가 있으면 false 반환
             }
             finally
             {
-                connection.Close(); // Always close the connection
+                connection.Close(); // 항상 연결 닫기
             }
         }
+
+        // 검색기록 추가
         public bool AddSearchHistory(int userId, int plantId, DateTime searchDate)
         {
             try
@@ -397,6 +410,7 @@ namespace team10_24
             }
         }
 
+        // 북마크 존재 확인
         public bool CheckBookmarkExists(int userId, int plantId)
         {
             try
@@ -410,19 +424,20 @@ namespace team10_24
                 connection.Open();
                 int exists = Convert.ToInt32(cmd.ExecuteScalar());
 
-                return exists > 0; // Returns true if the bookmark exists
+                return exists > 0; // 북마크가 존재하면 true를 반환
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error in CheckBookmarkExists: " + ex.Message);
-                return false; // Returns false if there was an error
+                return false; // 오류가 있으면 false 반환
             }
             finally
             {
-                connection.Close(); // Always close the connection
+                connection.Close(); // 항상 연결 닫기
             }
         }
 
+        // 북마크 삭제
         public bool DeleteBookmark(int userId, int plantId)
         {
             try
@@ -436,19 +451,19 @@ namespace team10_24
                 connection.Open();
                 int result = cmd.ExecuteNonQuery();
 
-                return result > 0; // Returns true if the deletion was successful
+                return result > 0; // 삭제가 성공되면 true 반환
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error in DeleteBookmark: " + ex.Message);
-                return false; // Returns false if there was an error
+                return false; // 오류 발생하면 false 반환
             }
             finally
             {
-                connection.Close(); // Always close the connection
+                connection.Close(); // 항상 연결 닫기
             }
         }
-        // In the DatabaseManager class
+        // 일기장 추가
         public bool AddDiaryEntry(int userId, string diaryDate, string diaryEntry)
         {
             try
@@ -463,12 +478,12 @@ namespace team10_24
                 connection.Open();
                 int result = cmd.ExecuteNonQuery();
 
-                return result > 0; // True if the insert is successful
+                return result > 0; // 삽입 성공하면 true 반환
             }
             catch (Exception ex)
             {
                 Console.WriteLine("Error in AddDiaryEntry: " + ex.Message);
-                return false; // False if there was an error
+                return false; // 오류 발생하면 false 반환
             }
             finally
             {
@@ -482,6 +497,7 @@ namespace team10_24
             public string DiaryText { get; set; }
         }
 
+        // 특정 유저 일기 가져오기
         public List<DiaryEntry> GetDiaryEntriesForUser(int userId)
         {
             List<DiaryEntry> entries = new List<DiaryEntry>();
@@ -520,6 +536,7 @@ namespace team10_24
             return entries;
         }
 
+        // 일기 가져오기
         public DiaryEntry GetDiaryEntry(int userId, int diaryId)
         {
             DiaryEntry entry = null;
@@ -558,6 +575,8 @@ namespace team10_24
 
             return entry;
         }
+
+        // 일기 업데이트
         public bool UpdateDiaryEntry(int diaryId, string newEntry)
         {
             try
@@ -584,6 +603,7 @@ namespace team10_24
             }
         }
 
+        // 일기 삭제
         public bool DeleteDiaryEntry(int diaryId)
         {
             try
@@ -609,6 +629,7 @@ namespace team10_24
             }
         }
 
+        // 리뷰 추가
         public bool AddReview(int userId, int plantId, string reviewContent)
         {
             using (var conn = new MySqlConnection(connectionString))
@@ -625,6 +646,8 @@ namespace team10_24
                 }
             }
         }
+
+        // 특정 식물 리뷰 가져오기
         public List<(string UserName, string ReviewContent)> GetReviews(int plantId)
         {
             List<(string UserName, string ReviewContent)> reviews = new List<(string UserName, string ReviewContent)>();
@@ -653,8 +676,5 @@ namespace team10_24
 
             return reviews;
         }
-
-
-
     }
 }

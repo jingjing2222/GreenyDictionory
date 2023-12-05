@@ -22,9 +22,9 @@ namespace team10_24
 
         private void Add_Click(object sender, EventArgs e)
         {
-            int loggedInUserId = UserSession.Instance.UserId; // Assuming you have a way to get the logged-in user's ID
-            string diaryDate = dateTimePicker1.Value.ToString("yyyy-MM-dd"); // Format the date as needed
-            string diaryEntry = diary.Text; // Assuming 'diary' is the name of your TextBox
+            int loggedInUserId = UserSession.Instance.UserId; // 로그인한 사용자의 ID를 얻을 수 있는 방법이 있다고 가정
+            string diaryDate = dateTimePicker1.Value.ToString("yyyy-MM-dd"); // 필요에 따라 날짜 형식을 지정
+            string diaryEntry = diary.Text; // diary가 TextBox의 이름이라고 가정
 
             if (dbManager.AddDiaryEntry(loggedInUserId, diaryDate, diaryEntry))
             {
