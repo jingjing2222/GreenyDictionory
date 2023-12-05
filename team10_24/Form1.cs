@@ -89,7 +89,7 @@ namespace team10_24
                 Form16 form16 = new Form16();
                 form16.ShowDialog();
             }
-            else
+            else         //아이디가 올바르지 않은 경우
             {
                 // 사용자 이름이 올바르지 않은 경우 메시지 박스를 표시하는 부분
                 MessageBox.Show("아이디가 올바르지 않습니다.");
