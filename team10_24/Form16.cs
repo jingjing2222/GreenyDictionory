@@ -12,6 +12,7 @@ namespace team10_24
 {
     public partial class Form16 : Form
     {
+        private DatabaseManager dbManager;
         // Form16의 생성자
         public Form16()
         {
@@ -56,8 +57,11 @@ namespace team10_24
         // 로그아웃 버튼 클릭 이벤트 핸들러
         private void logout_Click(object sender, EventArgs e)
         {
+            dbManager = new DatabaseManager();
+            this.Hide();
             Form1 form1 = new Form1(); // 로그인 폼으로 돌아감
-            form1.Show();
+            form1.ShowDialog();
+            dbManager.Disconnect();
         }
 
         // Form16 닫힐 때 이벤트 핸들러
