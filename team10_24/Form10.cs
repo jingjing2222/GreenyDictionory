@@ -14,7 +14,8 @@ using MySql.Data.MySqlClient;
 
 namespace team10_24
 {
-    public partial class Form10 : Form
+
+    public partial class form10 : Form
     {
         // 데이터베이스 연결 문자열
         private string connectionString = "server=webp.flykorea.kr; user=hpjw; database=hpjwDB; port=13306; password=qwer!@!@1234;";
@@ -24,14 +25,14 @@ namespace team10_24
         private int plantId;
 
         // 기본 생성자
-        public Form10()
+        public form10()
         {
             InitializeComponent();
             LoadImageFromServer();
         }
 
         // 식물 정보를 가진 생성자
-        public Form10(int plantId, string plantName, string plantColor, string bloomSeason)
+        public form10(int plantId, string plantName, string plantColor, string bloomSeason)
         {
             InitializeComponent();
             dbManager = new DatabaseManager(); // DatabaseManager 인스턴스 초기화
@@ -228,6 +229,14 @@ namespace team10_24
             }
         }
 
+        private void review_Click(object sender, EventArgs e)
+        {
+            DatabaseManager dbManager = new DatabaseManager();
+            Form15 form15 = new Form15(plantId);
+            form15.Show();
 
+            // 현재 폼을 닫음
+            this.Close();
+        }
     }
 }

@@ -91,7 +91,7 @@ namespace team10_24
                 string bloomSeason = dataGridView1.Rows[index].Cells["bloom_season"].Value.ToString();
 
                 // Form10에 식물 정보 전달
-                Form10 form10 = new Form10(plantId, plantName, plantColor, bloomSeason);
+                form10 form10 = new form10(plantId, plantName, plantColor, bloomSeason);
                 form10.Show();
                 this.Hide();
             }
