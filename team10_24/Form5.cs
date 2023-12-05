@@ -124,7 +124,7 @@ ORDER BY SearchHistoryTable.search_date DESC";
                 string bloomSeason = dataGridView1.Rows[index].Cells["bloom_season"].Value.ToString();
 
                 // 새 폼(Form10)을 생성하고 표시
-                Form10 form10 = new Form10(plantId, plantName, plantColor, bloomSeason);
+                form10 form10 = new form10(plantId, plantName, plantColor, bloomSeason);
                 form10.Show();
 
                 // 현재 폼을 숨김
