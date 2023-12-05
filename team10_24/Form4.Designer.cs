@@ -561,7 +561,7 @@ namespace team10_24
             this.Controls.Add(this.groupBoxColors);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form4";
-            this.Text = "Form4";
+            this.Text = "초록도감";
             this.groupBoxColors.ResumeLayout(false);
             this.groupBoxColors.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();

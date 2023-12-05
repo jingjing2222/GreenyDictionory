@@ -100,7 +100,7 @@ namespace team10_24
             this.Controls.Add(this.listView1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form15";
-            this.Text = "Form15";
+            this.Text = "초록도감";
             this.ResumeLayout(false);
             this.PerformLayout();
 

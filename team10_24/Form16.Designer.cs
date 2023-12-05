@@ -156,7 +156,7 @@ namespace team10_24
             this.Controls.Add(this.label1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form16";
-            this.Text = "Form16";
+            this.Text = "초록도감";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form16_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
