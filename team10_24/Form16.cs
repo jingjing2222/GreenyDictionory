@@ -25,35 +25,35 @@
             private void Search_Click(object sender, EventArgs e)
             {
                 Form4 form4 = new Form4(); // 검색 폼을 표시
-                form4.ShowDialog();
+                form4.Show();
             }
 
             // 기록 버튼 클릭 이벤트 핸들러
             private void history_Click(object sender, EventArgs e)
             {
                 Form5 form5 = new Form5(); // 기록 조회 폼을 표시
-                form5.ShowDialog();
+                form5.Show();
             }
 
             // 일기 버튼 클릭 이벤트 핸들러
             private void diary_Click(object sender, EventArgs e)
             {
                 Form6 form6 = new Form6(); // 일기 폼을 표시
-                form6.ShowDialog();
+                form6.Show();
             }
 
             // 커뮤니티 버튼 클릭 이벤트 핸들러
             private void community_Click(object sender, EventArgs e)
             {
                 Form11 form11 = new Form11(); // 커뮤니티 폼을 표시
-                form11.ShowDialog();
+                form11.Show();
             }
 
             // 북마크 버튼 클릭 이벤트 핸들러
             private void bookmark_Click(object sender, EventArgs e)
             {
                 Form14 form14 = new Form14(); // 북마크 폼을 표시
-                form14.ShowDialog();
+                form14.Show();
             }
 
             // 로그아웃 버튼 클릭 이벤트 핸들러
