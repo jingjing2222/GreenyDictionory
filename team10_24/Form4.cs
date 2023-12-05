@@ -95,11 +95,13 @@ namespace team10_24
 
         }
 
+        // 뒤로가기 버튼 클릭
         private void back_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        // 검색 버튼 클릭
         private void Search_Click(object sender, EventArgs e)
         {
             // 검색 필드에서 식물 이름을 가져옴
@@ -113,12 +115,12 @@ namespace team10_24
             string colorValue = null;
             string seasonValue = null;
 
-            if (!string.IsNullOrEmpty(selectedColor) && DatabaseManager.colorMapping.ContainsKey(selectedColor))
+            if (!string.IsNullOrEmpty(selectedColor) && DatabaseManager.colorMapping.ContainsKey(selectedColor))    // 선택된 색상이 있고, 매핑된 값이 있다면
             {
                 colorValue = DatabaseManager.colorMapping[selectedColor];
             }
 
-            if (!string.IsNullOrEmpty(selectedSeason) && DatabaseManager.seasonMapping.ContainsKey(selectedSeason))
+            if (!string.IsNullOrEmpty(selectedSeason) && DatabaseManager.seasonMapping.ContainsKey(selectedSeason)) // 선택된 계절이 있고, 매핑된 값이 있다면
             {
                 seasonValue = DatabaseManager.seasonMapping[selectedSeason];
             }
@@ -151,7 +153,7 @@ namespace team10_24
             // 이 메서드는 현재 비어 있음
         }
 
-        private void Add_Click(object sender, EventArgs e)
+        private void Add_Click(object sender, EventArgs e)  // 추가 버튼 클릭
         {
             // 추가 필드에서 식물 이름과 선택된 색상 및 계절의 값을 가져옴
             string plantName = name_search.Text;
@@ -166,9 +168,11 @@ namespace team10_24
             if (!string.IsNullOrEmpty(plantName) && colorValue != null && seasonValue != null)
             {
                 DatabaseManager dbManager = new DatabaseManager();
+
+                // 이미 같은 이름, 색상, 계절의 식물이 존재하는지 확인
                 if (!dbManager.CheckIfPlantExists(plantName, colorValue, seasonValue))
                 {
-                    if (dbManager.AddPlantData(plantName, colorValue, seasonValue))
+                    if (dbManager.AddPlantData(plantName, colorValue, seasonValue))  // 존재하지 않는 경우 식물을 추가
                     {
                         MessageBox.Show("식물 데이터가 성공적으로 추가되었습니다.");
                     }

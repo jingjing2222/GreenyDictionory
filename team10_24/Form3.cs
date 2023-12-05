@@ -20,9 +20,10 @@ namespace team10_24
             dbManager.Connect();
         }
 
-        private void pw_check_bt_Click(object sender, EventArgs e) //비밀번호 확인 버튼
+        private void pw_check_bt_Click(object sender, EventArgs e) //비밀번호 확인 버튼 눌렀을 때
         {
-            if (pw.Text.Equals(pw_check.Text))
+            //비밀번호 확인 로직
+            if (pw.Text.Equals(pw_check.Text))      
             {
                 MessageBox.Show("비밀번호 확인이 완료되었습니다.");
                 pw.Enabled = false;
@@ -34,8 +35,9 @@ namespace team10_24
             }
         }
 
-        private void Id_check_bt_Click(object sender, EventArgs e) //아이디 확인 버튼
+        private void Id_check_bt_Click(object sender, EventArgs e) //아이디 확인 버튼 눌렀을 때
         {
+            // 아이디 확인 로직
             if (dbManager.Id_check(Id.Text))
             {
                 MessageBox.Show("사용 가능한 아이디입니다.");
@@ -47,8 +49,9 @@ namespace team10_24
             }
         }
 
-        private void submit_Click(object sender, EventArgs e) //제출 버튼
+        private void submit_Click(object sender, EventArgs e) //제출 버튼 눌렀을 때
         {
+            // 제출 정보 검증
             if (Id.Enabled)
             {
                 MessageBox.Show("아이디 확인을 완료하세요.");
@@ -70,6 +73,7 @@ namespace team10_24
                 return;
 
             }
+            // 회원가입 처리
             bool result = dbManager.Register(Id.Text, pw.Text, email_tx.Text, name_tx.Text);
             if (result)
             {
@@ -84,6 +88,7 @@ namespace team10_24
             }
         }
 
+        // 돌아가기 버튼
         private void back_Click(object sender, EventArgs e)
         {
             this.Close();
