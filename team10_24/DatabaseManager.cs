@@ -609,37 +609,41 @@ namespace team10_24
             }
         }
 
-        public bool AddReview(int userId, string reviewContent)
+        public bool AddReview(int userId, int plantId, string reviewContent)
         {
             using (var conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                var query = "INSERT INTO ReviewTable (uid, review_content, review_date) VALUES (@uid, @reviewContent, NOW())";
+                var query = "INSERT INTO ReviewTable (uid, plant_id, review_content, review_date) VALUES (@uid, @plantId, @reviewContent, NOW())";
                 using (var cmd = new MySqlCommand(query, conn))
                 {
                     cmd.Parameters.AddWithValue("@uid", userId);
+                    cmd.Parameters.AddWithValue("@plantId", plantId);
                     cmd.Parameters.AddWithValue("@reviewContent", reviewContent);
                     var result = cmd.ExecuteNonQuery();
                     return result > 0;
                 }
             }
         }
-        public List<(string UserName, string ReviewContent)> GetReviews()
+        public List<(string UserName, string ReviewContent)> GetReviews(int plantId)
         {
             List<(string UserName, string ReviewContent)> reviews = new List<(string UserName, string ReviewContent)>();
 
             using (var conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                var query = "SELECT u.username, r.review_content FROM ReviewTable r JOIN UserTable u ON r.uid = u.uid";
+                // 'plant_id' 조건을 추가하여 해당 식물에 대한 리뷰만 가져옵니다
+                var query = "SELECT u.username, r.review_content FROM ReviewTable r JOIN UserTable u ON r.uid = u.uid WHERE r.plant_id = @plantId";
 
                 using (var cmd = new MySqlCommand(query, conn))
                 {
+                    cmd.Parameters.AddWithValue("@plantId", plantId);
+
                     using (var reader = cmd.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            string userName = reader.GetString("username"); // 컬럼 이름을 정확히 맞춥니다.
+                            string userName = reader.GetString("username");
                             string reviewContent = reader.GetString("review_content");
                             reviews.Add((UserName: userName, ReviewContent: reviewContent));
                         }
@@ -649,6 +653,7 @@ namespace team10_24
 
             return reviews;
         }
+
 
 
     }

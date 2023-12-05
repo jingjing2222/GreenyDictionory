@@ -25,7 +25,6 @@ namespace team10_24
             listView1.Items.Clear(); // 기존 아이템을 클리어
             listView1.View = View.Details;
 
-            // 컬럼이 이미 추가되어 있지 않은 경우에만 추가
             if (listView1.Columns.Count == 0)
             {
                 listView1.Columns.Add("User Name", 150);
@@ -33,7 +32,7 @@ namespace team10_24
             }
 
             DatabaseManager dbManager = new DatabaseManager();
-            var reviews = dbManager.GetReviews();
+            var reviews = dbManager.GetReviews(plantId); // 현재 plantId에 해당하는 리뷰를 가져옵니다
 
             foreach (var review in reviews)
             {
@@ -42,6 +41,7 @@ namespace team10_24
                 listView1.Items.Add(item);
             }
         }
+
 
         private void review_add_Click(object sender, EventArgs e)
         {
@@ -52,7 +52,7 @@ namespace team10_24
                 DatabaseManager dbManager = new DatabaseManager();
                 int loggedInUserId = UserSession.Instance.UserId; // Assuming you have a UserSession class
 
-                if (dbManager.AddReview(loggedInUserId, reviewText))
+                if (dbManager.AddReview(loggedInUserId, this.plantId, reviewText)) // plantId 추가
                 {
                     textBox1.Text = string.Empty;
                     MessageBox.Show("리뷰가 성공적으로 추가되었습니다.");
