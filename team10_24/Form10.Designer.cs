@@ -327,7 +327,7 @@ namespace team10_24
             this.bookmark.Location = new System.Drawing.Point(726, 15);
             this.bookmark.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.bookmark.Name = "bookmark";
-            this.bookmark.Size = new System.Drawing.Size(62, 62);
+            this.bookmark.Size = new System.Drawing.Size(62, 68);
             this.bookmark.TabIndex = 118;
             this.bookmark.UseVisualStyleBackColor = false;
             this.bookmark.Click += new System.EventHandler(this.bookmark_Click);
