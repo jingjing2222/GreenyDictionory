@@ -112,3 +112,36 @@ C:\Users\User\Desktop\GreenyDictinory (2)\team10_24\obj\Debug\team10_24.csproj.C
 C:\Users\User\Desktop\GreenyDictinory (2)\team10_24\obj\Debug\team10_24.csproj.CopyComplete
 C:\Users\User\Desktop\GreenyDictinory (2)\team10_24\obj\Debug\team10_24.exe
 C:\Users\User\Desktop\GreenyDictinory (2)\team10_24\obj\Debug\team10_24.pdb
+C:\Users\김현우\Downloads\GreenyDictinory\team10_24\bin\Debug\team10_24.exe.config
+C:\Users\김현우\Downloads\GreenyDictinory\team10_24\bin\Debug\team10_24.exe
+C:\Users\김현우\Downloads\GreenyDictinory\team10_24\bin\Debug\team10_24.pdb
+C:\Users\김현우\Downloads\GreenyDictinory\team10_24\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\김현우\Downloads\GreenyDictinory\team10_24\bin\Debug\MySql.Data.dll
+C:\Users\김현우\Downloads\GreenyDictinory\team10_24\bin\Debug\System.Buffers.dll
+C:\Users\김현우\Downloads\GreenyDictinory\team10_24\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\김현우\Downloads\GreenyDictinory\team10_24\bin\Debug\MySql.Data.xml
+C:\Users\김현우\Downloads\GreenyDictinory\team10_24\obj\Debug\team10_24.csproj.AssemblyReference.cache
+C:\Users\김현우\Downloads\GreenyDictinory\team10_24\obj\Debug\team10_24.Form1.resources
+C:\Users\김현우\Downloads\GreenyDictinory\team10_24\obj\Debug\team10_24.Form10.resources
+C:\Users\김현우\Downloads\GreenyDictinory\team10_24\obj\Debug\team10_24.Form11.resources
+C:\Users\김현우\Downloads\GreenyDictinory\team10_24\obj\Debug\team10_24.Form12.resources
+C:\Users\김현우\Downloads\GreenyDictinory\team10_24\obj\Debug\team10_24.Form13.resources
+C:\Users\김현우\Downloads\GreenyDictinory\team10_24\obj\Debug\team10_24.Form14.resources
+C:\Users\김현우\Downloads\GreenyDictinory\team10_24\obj\Debug\team10_24.Form15.resources
+C:\Users\김현우\Downloads\GreenyDictinory\team10_24\obj\Debug\team10_24.Form16.resources
+C:\Users\김현우\Downloads\GreenyDictinory\team10_24\obj\Debug\team10_24.Form2.resources
+C:\Users\김현우\Downloads\GreenyDictinory\team10_24\obj\Debug\team10_24.Form3.resources
+C:\Users\김현우\Downloads\GreenyDictinory\team10_24\obj\Debug\team10_24.Form4.resources
+C:\Users\김현우\Downloads\GreenyDictinory\team10_24\obj\Debug\team10_24.Form5.resources
+C:\Users\김현우\Downloads\GreenyDictinory\team10_24\obj\Debug\team10_24.Form6.resources
+C:\Users\김현우\Downloads\GreenyDictinory\team10_24\obj\Debug\team10_24.Form7.resources
+C:\Users\김현우\Downloads\GreenyDictinory\team10_24\obj\Debug\team10_24.Form8.resources
+C:\Users\김현우\Downloads\GreenyDictinory\team10_24\obj\Debug\team10_24.Form9.resources
+C:\Users\김현우\Downloads\GreenyDictinory\team10_24\obj\Debug\team10_24.Properties.Resources.resources
+C:\Users\김현우\Downloads\GreenyDictinory\team10_24\obj\Debug\team10_24.csproj.GenerateResource.cache
+C:\Users\김현우\Downloads\GreenyDictinory\team10_24\obj\Debug\team10_24.csproj.CoreCompileInputs.cache
+C:\Users\김현우\Downloads\GreenyDictinory\team10_24\obj\Debug\team10_24.csproj.CopyComplete
+C:\Users\김현우\Downloads\GreenyDictinory\team10_24\obj\Debug\team10_24.exe
+C:\Users\김현우\Downloads\GreenyDictinory\team10_24\obj\Debug\team10_24.pdb
+C:\Users\김현우\Downloads\GreenyDictinory\team10_24\bin\Debug\Renci.SshNet.dll
+C:\Users\김현우\Downloads\GreenyDictinory\team10_24\bin\Debug\Renci.SshNet.xml
