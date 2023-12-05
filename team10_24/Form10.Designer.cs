@@ -1,7 +1,7 @@
 ﻿
 namespace team10_24
 {
-    partial class Form10
+    partial class form10
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@ namespace team10_24
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form10));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(form10));
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.name_add = new System.Windows.Forms.TextBox();
@@ -65,7 +65,7 @@ namespace team10_24
             this.orange = new System.Windows.Forms.RadioButton();
             this.yellow = new System.Windows.Forms.RadioButton();
             this.brown = new System.Windows.Forms.RadioButton();
-            this.radioButton10 = new System.Windows.Forms.RadioButton();
+            this.white = new System.Windows.Forms.RadioButton();
             this.green = new System.Windows.Forms.RadioButton();
             this.groupBoxSeasons = new System.Windows.Forms.GroupBox();
             this.winter = new System.Windows.Forms.RadioButton();
@@ -355,7 +355,7 @@ namespace team10_24
             this.groupBoxColors.Controls.Add(this.orange);
             this.groupBoxColors.Controls.Add(this.yellow);
             this.groupBoxColors.Controls.Add(this.brown);
-            this.groupBoxColors.Controls.Add(this.radioButton10);
+            this.groupBoxColors.Controls.Add(this.white);
             this.groupBoxColors.Controls.Add(this.green);
             this.groupBoxColors.Location = new System.Drawing.Point(60, 147);
             this.groupBoxColors.Name = "groupBoxColors";
@@ -462,16 +462,16 @@ namespace team10_24
             this.brown.TabStop = true;
             this.brown.UseVisualStyleBackColor = true;
             // 
-            // radioButton10
+            // white
             // 
-            this.radioButton10.AutoSize = true;
-            this.radioButton10.Location = new System.Drawing.Point(8, 49);
-            this.radioButton10.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.radioButton10.Name = "radioButton10";
-            this.radioButton10.Size = new System.Drawing.Size(14, 13);
-            this.radioButton10.TabIndex = 12;
-            this.radioButton10.TabStop = true;
-            this.radioButton10.UseVisualStyleBackColor = true;
+            this.white.AutoSize = true;
+            this.white.Location = new System.Drawing.Point(8, 49);
+            this.white.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.white.Name = "white";
+            this.white.Size = new System.Drawing.Size(14, 13);
+            this.white.TabIndex = 12;
+            this.white.TabStop = true;
+            this.white.UseVisualStyleBackColor = true;
             // 
             // green
             // 
@@ -550,7 +550,7 @@ namespace team10_24
             this.PlantImage.TabIndex = 122;
             this.PlantImage.TabStop = false;
             // 
-            // Form10
+            // 식물정보
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -584,7 +584,7 @@ namespace team10_24
             this.Controls.Add(this.groupBoxColors);
             this.Controls.Add(this.groupBoxSeasons);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "Form10";
+            this.Name = "식물정보";
             this.Text = "Form10";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox10)).EndInit();
@@ -644,7 +644,7 @@ namespace team10_24
         private System.Windows.Forms.RadioButton orange;
         private System.Windows.Forms.RadioButton yellow;
         private System.Windows.Forms.RadioButton brown;
-        private System.Windows.Forms.RadioButton radioButton10;
+        private System.Windows.Forms.RadioButton white;
         private System.Windows.Forms.RadioButton green;
         private System.Windows.Forms.GroupBox groupBoxSeasons;
         private System.Windows.Forms.RadioButton winter;
