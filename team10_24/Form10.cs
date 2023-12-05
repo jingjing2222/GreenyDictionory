@@ -14,6 +14,7 @@ using MySql.Data.MySqlClient;
 
 namespace team10_24
 {
+
     public partial class Form10 : Form
     {
         // 데이터베이스 연결 문자열
@@ -228,6 +229,14 @@ namespace team10_24
             }
         }
 
+        private void review_Click(object sender, EventArgs e)
+        {
+            DatabaseManager dbManager = new DatabaseManager();
+            Form15 form15 = new Form15(plantId);
+            form15.Show();
 
+            // 현재 폼을 닫음
+            this.Close();
+        }
     }
 }

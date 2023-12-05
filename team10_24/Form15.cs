@@ -12,16 +12,61 @@ namespace team10_24
 {
     public partial class Form15 : Form
     {
-        public Form15()
+        public int plantId;
+        public Form15(int plantId)
         {
+            this.plantId = plantId;
             InitializeComponent();
             InitializeListView();
         }
 
         private void InitializeListView()
         {
-            // 리뷰 목록 뷰 설정
-            listView1.View = View.List;
+            listView1.Items.Clear(); // 기존 아이템을 클리어
+            listView1.View = View.Details;
+
+            // 컬럼이 이미 추가되어 있지 않은 경우에만 추가
+            if (listView1.Columns.Count == 0)
+            {
+                listView1.Columns.Add("User Name", 150);
+                listView1.Columns.Add("Review", 250);
+            }
+
+            DatabaseManager dbManager = new DatabaseManager();
+            var reviews = dbManager.GetReviews();
+
+            foreach (var review in reviews)
+            {
+                ListViewItem item = new ListViewItem(review.UserName);
+                item.SubItems.Add(review.ReviewContent);
+                listView1.Items.Add(item);
+            }
+        }
+
+        private void review_add_Click(object sender, EventArgs e)
+        {
+            string reviewText = textBox1.Text;
+
+            if (!string.IsNullOrEmpty(reviewText))
+            {
+                DatabaseManager dbManager = new DatabaseManager();
+                int loggedInUserId = UserSession.Instance.UserId; // Assuming you have a UserSession class
+
+                if (dbManager.AddReview(loggedInUserId, reviewText))
+                {
+                    textBox1.Text = string.Empty;
+                    MessageBox.Show("리뷰가 성공적으로 추가되었습니다.");
+                    InitializeListView(); // 리뷰 추가 후 ListView를 새로고침
+                }
+                else
+                {
+                    MessageBox.Show("리뷰 추가에 실패했습니다.");
+                }
+            }
+            else
+            {
+                MessageBox.Show("리뷰를 입력하세요.");
+            }
         }
 
         private void back_Click(object sender, EventArgs e)
@@ -29,23 +74,9 @@ namespace team10_24
             this.Close();
         }
 
-        private void review_add_Click(object sender, EventArgs e)
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            // 텍스트박스에서 리뷰 텍스트 가져오기
-            string reviewText = textBox1.Text;
 
-            if (!string.IsNullOrEmpty(reviewText))
-            {
-                // 리스트뷰에 리뷰 추가
-                listView1.Items.Add(reviewText);
-
-                // 추가 후 텍스트 박스 초기화
-                textBox1.Text = string.Empty;
-            }
-            else
-            {
-                MessageBox.Show("리뷰를 입력하세요.");
-            }
         }
     }
 }
