@@ -48,37 +48,37 @@ namespace team10_24
             // 
             // Id
             // 
-            this.Id.Location = new System.Drawing.Point(119, 98);
+            this.Id.Location = new System.Drawing.Point(104, 78);
             this.Id.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Id.Name = "Id";
-            this.Id.Size = new System.Drawing.Size(181, 25);
+            this.Id.Size = new System.Drawing.Size(159, 21);
             this.Id.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("굴림", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(117, 22);
+            this.label1.Location = new System.Drawing.Point(102, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(138, 28);
+            this.label1.Size = new System.Drawing.Size(110, 22);
             this.label1.TabIndex = 1;
             this.label1.Text = "회원가입 ";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(117, 80);
+            this.label2.Location = new System.Drawing.Point(102, 64);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(52, 15);
+            this.label2.Size = new System.Drawing.Size(41, 12);
             this.label2.TabIndex = 2;
             this.label2.Text = "아이디";
             // 
             // Id_check_bt
             // 
-            this.Id_check_bt.Location = new System.Drawing.Point(315, 98);
+            this.Id_check_bt.Location = new System.Drawing.Point(276, 78);
             this.Id_check_bt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Id_check_bt.Name = "Id_check_bt";
-            this.Id_check_bt.Size = new System.Drawing.Size(101, 26);
+            this.Id_check_bt.Size = new System.Drawing.Size(88, 21);
             this.Id_check_bt.TabIndex = 3;
             this.Id_check_bt.Text = "아이디 확인";
             this.Id_check_bt.UseVisualStyleBackColor = true;
@@ -87,43 +87,43 @@ namespace team10_24
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(119, 145);
+            this.label3.Location = new System.Drawing.Point(104, 116);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 15);
+            this.label3.Size = new System.Drawing.Size(53, 12);
             this.label3.TabIndex = 4;
             this.label3.Text = "비밀번호";
             // 
             // pw
             // 
-            this.pw.Location = new System.Drawing.Point(119, 162);
+            this.pw.Location = new System.Drawing.Point(104, 130);
             this.pw.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pw.Name = "pw";
-            this.pw.Size = new System.Drawing.Size(181, 25);
+            this.pw.Size = new System.Drawing.Size(159, 21);
             this.pw.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(119, 212);
+            this.label4.Location = new System.Drawing.Point(104, 170);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(117, 15);
+            this.label4.Size = new System.Drawing.Size(93, 12);
             this.label4.TabIndex = 6;
             this.label4.Text = "비밀번호 재확인";
             // 
             // pw_check
             // 
-            this.pw_check.Location = new System.Drawing.Point(122, 232);
+            this.pw_check.Location = new System.Drawing.Point(107, 186);
             this.pw_check.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pw_check.Name = "pw_check";
-            this.pw_check.Size = new System.Drawing.Size(178, 25);
+            this.pw_check.Size = new System.Drawing.Size(156, 21);
             this.pw_check.TabIndex = 7;
             // 
             // pw_check_bt
             // 
-            this.pw_check_bt.Location = new System.Drawing.Point(315, 232);
+            this.pw_check_bt.Location = new System.Drawing.Point(276, 186);
             this.pw_check_bt.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pw_check_bt.Name = "pw_check_bt";
-            this.pw_check_bt.Size = new System.Drawing.Size(133, 25);
+            this.pw_check_bt.Size = new System.Drawing.Size(116, 20);
             this.pw_check_bt.TabIndex = 8;
             this.pw_check_bt.Text = "비밀번호 재확인";
             this.pw_check_bt.UseVisualStyleBackColor = true;
@@ -132,43 +132,43 @@ namespace team10_24
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(119, 281);
+            this.label5.Location = new System.Drawing.Point(104, 225);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(37, 15);
+            this.label5.Size = new System.Drawing.Size(29, 12);
             this.label5.TabIndex = 9;
             this.label5.Text = "이름";
             // 
             // name_tx
             // 
-            this.name_tx.Location = new System.Drawing.Point(122, 300);
+            this.name_tx.Location = new System.Drawing.Point(107, 240);
             this.name_tx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.name_tx.Name = "name_tx";
-            this.name_tx.Size = new System.Drawing.Size(178, 25);
+            this.name_tx.Size = new System.Drawing.Size(156, 21);
             this.name_tx.TabIndex = 10;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(119, 345);
+            this.label6.Location = new System.Drawing.Point(104, 276);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 15);
+            this.label6.Size = new System.Drawing.Size(41, 12);
             this.label6.TabIndex = 11;
             this.label6.Text = "이메일";
             // 
             // email_tx
             // 
-            this.email_tx.Location = new System.Drawing.Point(122, 362);
+            this.email_tx.Location = new System.Drawing.Point(107, 290);
             this.email_tx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.email_tx.Name = "email_tx";
-            this.email_tx.Size = new System.Drawing.Size(178, 25);
+            this.email_tx.Size = new System.Drawing.Size(156, 21);
             this.email_tx.TabIndex = 12;
             // 
             // submit
             // 
-            this.submit.Location = new System.Drawing.Point(122, 427);
+            this.submit.Location = new System.Drawing.Point(107, 342);
             this.submit.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.submit.Name = "submit";
-            this.submit.Size = new System.Drawing.Size(89, 31);
+            this.submit.Size = new System.Drawing.Size(78, 25);
             this.submit.TabIndex = 13;
             this.submit.Text = "제출";
             this.submit.UseVisualStyleBackColor = true;
@@ -176,9 +176,10 @@ namespace team10_24
             // 
             // back
             // 
-            this.back.Location = new System.Drawing.Point(237, 427);
+            this.back.Location = new System.Drawing.Point(207, 342);
+            this.back.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.back.Name = "back";
-            this.back.Size = new System.Drawing.Size(91, 31);
+            this.back.Size = new System.Drawing.Size(80, 25);
             this.back.TabIndex = 14;
             this.back.Text = "돌아가기";
             this.back.UseVisualStyleBackColor = true;
@@ -186,9 +187,9 @@ namespace team10_24
             // 
             // Form3
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(559, 511);
+            this.ClientSize = new System.Drawing.Size(489, 409);
             this.Controls.Add(this.back);
             this.Controls.Add(this.submit);
             this.Controls.Add(this.email_tx);
@@ -206,7 +207,7 @@ namespace team10_24
             this.Controls.Add(this.Id);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form3";
-            this.Text = "Form3";
+            this.Text = "초록도감";
             this.ResumeLayout(false);
             this.PerformLayout();
 

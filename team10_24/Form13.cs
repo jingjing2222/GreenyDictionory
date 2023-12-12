@@ -16,18 +16,21 @@ namespace team10_24
         private int postId; // 현재 보여지는 글의 ID
         private string connectionString = "server=webp.flykorea.kr; user=hpjw; database=hpjwDB; port=13306; password=qwer!@!@1234;";
 
+        // Form13의 생성자
         public Form13(int postId)
         {
             InitializeComponent();
             this.postId = postId;
-            LoadPost();
+            LoadPost(); // 글 로드 메서드 호출
         }
 
+        // 글 로드 메서드
         private void LoadPost()
         {
             using (var conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
+                // 커뮤니티 테이블에서 해당 글의 정보를 가져오는 쿼리
                 var query = "SELECT uid, title, content FROM CommunityTable WHERE post_id = @postId";
                 using (var cmd = new MySqlCommand(query, conn))
                 {
@@ -40,11 +43,8 @@ namespace team10_24
                             string title = reader.GetString("title");
                             string content = reader.GetString("content");
 
-                            // 여기에서 title과 content를 UI 컨트롤에 설정합니다.
-                            // 예: titleLabel.Text = title; contentTextBox.Text = content;
-
-                            // 현재 로그인한 사용자의 UID와 글의 UID를 비교하여 버튼 활성화 결정
-                            textBox1.Text = content;  // textBox1은 내용을 표시하는 텍스트 박스
+                            // UI 컨트롤에 제목과 내용 설정
+                            textBox1.Text = content;
                             Modify.Enabled = Delete.Enabled = (postUid == UserSession.Instance.UserId);
                         }
                     }
@@ -52,6 +52,7 @@ namespace team10_24
             }
         }
 
+        // 삭제 버튼 클릭 이벤트 핸들러
         private void Delete_Click(object sender, EventArgs e)
         {
             var confirmResult = MessageBox.Show("정말로 이 글을 삭제하시겠습니까?",
@@ -62,6 +63,7 @@ namespace team10_24
                 using (var conn = new MySqlConnection(connectionString))
                 {
                     conn.Open();
+                    // 커뮤니티 테이블에서 해당 글을 삭제하는 쿼리
                     var query = "DELETE FROM CommunityTable WHERE post_id = @postId";
 
                     using (var cmd = new MySqlCommand(query, conn))
@@ -72,7 +74,9 @@ namespace team10_24
                         if (result > 0)
                         {
                             MessageBox.Show("글이 삭제되었습니다.");
-                            this.Close(); // 글 삭제 후 폼을 닫음
+                            this.Close(); // 글 삭제 후 Form11을 표시
+                            Form11 form11 = new Form11();
+                            form11.Show();
                         }
                         else
                         {
@@ -83,26 +87,34 @@ namespace team10_24
             }
         }
 
+        // 수정 버튼 클릭 이벤트 핸들러
         private void Modify_Click(object sender, EventArgs e)
         {
             using (var conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
+                // 커뮤니티 테이블에서 해당 글의 내용을 업데이트하는 쿼리
                 var query = "UPDATE CommunityTable SET content = @content WHERE post_id = @postId";
 
                 using (var cmd = new MySqlCommand(query, conn))
                 {
-                    cmd.Parameters.AddWithValue("@content",textBox1.Text); // 현재 UI에서의 내용
+                    cmd.Parameters.AddWithValue("@content", textBox1.Text); // 현재 UI에서의 내용
                     cmd.Parameters.AddWithValue("@postId", postId);
 
-                    cmd.ExecuteNonQuery(); // 예외 처리 없이 실행
+                    cmd.ExecuteNonQuery(); // 쿼리 실행
                 }
             }
             MessageBox.Show("글이 수정되었습니다.");
+            this.Close(); // 글 수정 후 Form11을 표시
+            Form11 form11 = new Form11();
+            form11.Show();
         }
 
+        // 뒤로 가기 버튼 클릭 이벤트 핸들러
         private void back_Click(object sender, EventArgs e)
         {
+            Form11 form11 = new Form11();
+            form11.Show();
             this.Close();
         }
     }
