@@ -23,7 +23,4 @@
 ## 사용법
 ### 사전 필수 환경
 * .NET Framework 또는 .NET Core 설치
-
-<!-- 여기에 프로젝트 사용법을 자세히 기술하세요. -->
-
-
+* Visual studio - MySQL.data 설치
