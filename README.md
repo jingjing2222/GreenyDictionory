@@ -1,7 +1,7 @@
 # 초록도감
 
 <p align="center">
-  <img src="https://github.com/jingjing2222/GreenyDictinory/blob/main/%EA%B7%B8%EB%A6%BC1.png?raw=true" width="200"/>
+  <img src="https://github.com/jingjing2222/GreenyDictinory/blob/main/%EA%B7%B8%EB%A6%BC1.png?raw=true" width="600"/>
 </p>
 
 ## 고급 C# 프로그래밍 팀프로젝트
